@@ -1,0 +1,147 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+
+  @media (min-width: 480px) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #1c3461;
+}
+
+.required {
+  color: #f87171;
+  margin-left: 0.125rem;
+}
+
+.optional {
+  color: #9ca3af;
+  font-weight: 400;
+  margin-left: 0.25rem;
+}
+
+.input,
+.select,
+.textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  border: 1.5px solid #e5e7eb;
+  font-size: 0.875rem;
+  color: #1f2937;
+  background: #fff;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+  font-family: inherit;
+
+  &::placeholder {
+    color: #9ca3af;
+  }
+
+  &:focus {
+    border-color: #2898b8;
+    box-shadow: 0 0 0 3px rgba(40, 152, 184, 0.12);
+  }
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 130px;
+}
+
+.errorMsg {
+  font-size: 0.875rem;
+  color: #ef4444;
+  padding: 0.75rem 1rem;
+  background: #fef2f2;
+  border-radius: 0.625rem;
+  border: 1px solid #fecaca;
+}
+
+.submitBtn {
+  width: 100%;
+  padding: 0.875rem;
+  border-radius: 9999px;
+  background: #1c3461;
+  color: #fff;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s ease, box-shadow 0.2s;
+  font-family: inherit;
+
+  &:hover:not(:disabled) {
+    background: #0f1e3d;
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(28, 52, 97, 0.25);
+  }
+
+  &:active:not(:disabled) {
+    transform: scale(0.95);
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+.success {
+  border-radius: 1.25rem;
+  background: #dcf5e7;
+  border: 1px solid rgba(40, 128, 74, 0.2);
+  padding: 2.5rem;
+  text-align: center;
+  animation: scaleIn 0.3s ease-out both;
+}
+
+.successIcon {
+  color: #28804a;
+  margin: 0 auto 1rem;
+}
+
+.successTitle {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #1c3461;
+  margin-bottom: 0.5rem;
+}
+
+.successBody {
+  font-size: 0.9375rem;
+  color: #374151;
+}
+
+.sendAgainBtn {
+  margin-top: 1.25rem;
+  font-size: 0.875rem;
+  color: #2898b8;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+
+  &:hover {
+    color: #1a607a;
+  }
+}

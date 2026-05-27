@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 330" width="340" height="330">
+  <title>APRIA Logo</title>
+
+  <!-- =============================================
+       APRIA LOGO - Editable SVG
+       Recreated from raster original.
+
+       Structure:
+         #mountain-icon  - the layered mountain mark
+           #layer-navy        - back, leftmost blade
+           #layer-dark-teal   - second blade
+           #layer-light-teal  - third blade
+           #layer-green       - front, rightmost blade
+         #wordmark       - "APRIA" text
+
+       Colors:
+         Navy:       #1c3461
+         Dark teal:  #1a607a
+         Light teal: #2898b8
+         Green:      #28804a
+
+       Font note: wordmark uses Arial Bold.
+         For a closer match, substitute Futura,
+         Myriad Pro, or a geometric sans-serif.
+  ============================================= -->
+
+  <g id="mountain-icon">
+
+    <!-- Back blade: dark navy -->
+    <path id="layer-navy"
+          d="M 170,38 C 136,92 86,168 78,232 L 138,232 C 142,174 156,104 170,38 Z"
+          fill="#1c3461"/>
+
+    <!-- Second blade: dark teal -->
+    <path id="layer-dark-teal"
+          d="M 170,38 C 158,90 128,166 120,232 L 175,232 C 174,168 172,100 170,38 Z"
+          fill="#1a607a"/>
+
+    <!-- Third blade: light teal -->
+    <path id="layer-light-teal"
+          d="M 170,38 C 170,90 168,166 164,232 L 218,232 C 214,168 186,100 170,38 Z"
+          fill="#2898b8"/>
+
+    <!-- Front blade: green -->
+    <path id="layer-green"
+          d="M 170,38 C 174,90 192,166 212,232 L 262,232 C 258,174 210,104 170,38 Z"
+          fill="#28804a"/>
+
+  </g>
+
+  <!-- Wordmark -->
+  <text id="wordmark"
+        x="170" y="294"
+        text-anchor="middle"
+        fill="#1c3461"
+        font-family="Arial, Helvetica, sans-serif"
+        font-size="48"
+        font-weight="bold"
+        letter-spacing="10">APRIA</text>
+
+</svg>

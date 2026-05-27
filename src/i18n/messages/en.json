@@ -1,0 +1,234 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "about": "About",
+    "contact": "Contact",
+    "cta": "Get in Touch"
+  },
+  "common": {
+    "bookConsultation": "Book a Free Consultation",
+    "viewServices": "View Services",
+    "learnMore": "Learn More",
+    "workWithMe": "Work with Me",
+    "required": "required",
+    "optional": "(optional)"
+  },
+  "home": {
+    "hero": {
+      "badge": "Qualified Accountant · ACCA · MAAT",
+      "slide1": {
+        "title": "Accounting for Limited Companies",
+        "subtitle": "Annual accounts, VAT returns, and CIS compliance - handled accurately and submitted on time."
+      },
+      "slide2": {
+        "title": "Self-Employment, Simplified",
+        "subtitle": "From UTR registration to Self Assessment - we guide you through every step with clarity."
+      },
+      "slide3": {
+        "title": "HMRC Support & Investigations",
+        "subtitle": "Facing an HMRC enquiry? We'll prepare the documentation and deal with authorities on your behalf."
+      },
+      "primaryCta": "Book a Free Consultation",
+      "secondaryCta": "View Services"
+    },
+    "services": {
+      "heading": "What We Offer",
+      "subheading": "Expert accounting and tax services for limited companies and self-employed individuals.",
+      "seeAll": "See all services"
+    },
+    "credentials": {
+      "heading": "Qualified & Trusted",
+      "subheading": "5 years of hands-on experience backed by professional qualifications and membership of the UK's leading accounting bodies.",
+      "acca": "Association of Chartered Certified Accountants",
+      "maat": "Member of the Association of Accounting Technicians",
+      "aat": "Association of Accounting Technicians",
+      "icaew": "Institute of Chartered Accountants in England and Wales"
+    },
+    "stats": {
+      "years": "Years Experience",
+      "clients": "Clients Served",
+      "services": "Services Offered",
+      "satisfaction": "Client Satisfaction"
+    },
+    "cta": {
+      "heading": "Ready to take control of your finances?",
+      "body": "Whether you need help with tax returns, financial reporting, or strategic business advice - get in touch today for a free, no-obligation consultation.",
+      "button": "Get in Touch"
+    }
+  },
+  "services": {
+    "badge": "What we do",
+    "heading": "Our Services",
+    "subheading": "Expert accounting and tax services for limited companies and self-employed individuals across England.",
+    "categories": {
+      "limitedCompany": "Limited Company",
+      "selfEmployed": "Self-Employed"
+    },
+    "cta": {
+      "heading": "Not sure which service you need?",
+      "body": "Book a free consultation and we'll help you figure out exactly what your business needs.",
+      "button": "Book a Free Consultation"
+    },
+    "annualAccounts": {
+      "title": "Annual Accounts & Financial Statements",
+      "summary": "We prepare and submit the annual accounts for your Limited Company, ensuring full compliance with HMRC and Companies House requirements.",
+      "points": [
+        "Preparation and submission of statutory annual accounts",
+        "Companies House filing and compliance",
+        "HMRC corporation tax return (CT600)",
+        "Director's report and management commentary",
+        "Confirmation statement support"
+      ]
+    },
+    "vatReturns": {
+      "title": "VAT Returns",
+      "summary": "We assist with the preparation and submission of VAT returns and provide support regarding registration, payments, and tax obligations.",
+      "points": [
+        "VAT registration with HMRC",
+        "Preparation and submission of VAT returns",
+        "VAT scheme advice (flat rate, standard, cash accounting)",
+        "Making Tax Digital (MTD) compliance",
+        "VAT payment and deadline management"
+      ]
+    },
+    "cisReturn": {
+      "title": "CIS Return",
+      "summary": "We manage CIS returns for companies operating under the Construction Industry Scheme, ensuring all reporting to HMRC is submitted correctly and on time.",
+      "points": [
+        "Monthly CIS return preparation and submission",
+        "Subcontractor verification with HMRC",
+        "CIS deduction statements for subcontractors",
+        "HMRC compliance and deadline management",
+        "CIS suffered refund claims"
+      ]
+    },
+    "selfAssessment": {
+      "title": "Self Assessment / Tax Return",
+      "summary": "We prepare and submit Self Assessment tax returns for self-employed individuals, ensuring you comply with all HMRC requirements and claim every allowable deduction.",
+      "points": [
+        "Preparation and submission of Self Assessment tax returns",
+        "Calculation of income tax and National Insurance liability",
+        "Allowable expense identification and advice",
+        "HMRC payment deadline management",
+        "Payments on account guidance"
+      ]
+    },
+    "utrRegistration": {
+      "title": "UTR Registration",
+      "summary": "We help you obtain your Unique Taxpayer Reference number required for self-employed activity and provide support throughout the HMRC registration process.",
+      "points": [
+        "HMRC self-employment registration",
+        "Unique Taxpayer Reference (UTR) application",
+        "Class 2 and Class 4 National Insurance setup",
+        "Guidance on your obligations and key deadlines",
+        "Full setup support from day one"
+      ]
+    },
+    "hmrcInvestigations": {
+      "title": "HMRC Investigations",
+      "summary": "We assist you in the event of an HMRC investigation, helping you manage the process correctly by preparing the necessary documentation and communicating with the tax authorities.",
+      "points": [
+        "Full enquiry and aspect enquiry support",
+        "Review and preparation of supporting documentation",
+        "Direct communication with HMRC on your behalf",
+        "Penalty mitigation and negotiation",
+        "Compliance check and disclosure assistance"
+      ]
+    }
+  },
+  "about": {
+    "badge": "About APRIA",
+    "heading": "Meet Your Accountant",
+    "subheading": "A qualified, experienced professional dedicated to helping small businesses navigate their finances with confidence.",
+    "experience": {
+      "heading": "5 Years of Expertise",
+      "p1": "With five years of hands-on experience across a diverse range of industries, I have built a strong foundation in financial reporting, tax planning, and business advisory services.",
+      "p2": "I hold the ACCA and MAAT qualifications and am a proud member of both the Association of Accounting Technicians (AAT) and the Institute of Chartered Accountants in England and Wales (ICAEW).",
+      "p3": "I am passionate about helping small businesses thrive. Whether you are just starting out or looking to scale, I bring the expertise and personal commitment to guide you through every financial challenge.",
+      "p4": "My approach is simple: understand your goals, provide clear advice, and deliver work you can rely on."
+    },
+    "credentials": {
+      "heading": "Qualifications & Memberships",
+      "acca": {
+        "title": "Association of Chartered Certified Accountants",
+        "desc": "A globally recognised qualification demonstrating the highest standards of accounting expertise and ethics."
+      },
+      "maat": {
+        "title": "Member of the Association of Accounting Technicians",
+        "desc": "Awarded to accountants who have demonstrated technical competence and professional commitment."
+      },
+      "aat": {
+        "title": "Association of Accounting Technicians",
+        "desc": "Full membership of the UK's leading professional body for accounting technicians."
+      },
+      "icaew": {
+        "title": "Institute of Chartered Accountants in England and Wales",
+        "desc": "Membership of one of the world's most prestigious professional bodies for chartered accountants."
+      }
+    },
+    "values": {
+      "heading": "How I Work",
+      "accuracy": {
+        "title": "Accuracy",
+        "desc": "Every figure, report, and submission reviewed with meticulous attention to detail."
+      },
+      "transparency": {
+        "title": "Transparency",
+        "desc": "Clear communication and honest advice - no jargon, no hidden fees."
+      },
+      "dedication": {
+        "title": "Dedication",
+        "desc": "A genuine commitment to your goals, available when you need support."
+      },
+      "upToDate": {
+        "title": "Up-to-Date",
+        "desc": "Continuously keeping pace with changes in UK tax law and accounting standards."
+      }
+    }
+  },
+  "contact": {
+    "badge": "Get in touch",
+    "heading": "Contact Us",
+    "subheading": "Have a question or ready to get started? Fill in the form below and I'll get back to you within 1–2 business days.",
+    "form": {
+      "heading": "Send a Message",
+      "name": "Full Name",
+      "namePlaceholder": "Jane Smith",
+      "email": "Email Address",
+      "emailPlaceholder": "jane@example.com",
+      "phone": "Phone Number",
+      "phonePlaceholder": "+44 7700 000000",
+      "service": "Service You're Interested In",
+      "servicePlaceholder": "Select a service…",
+      "serviceOther": "Other / Not Sure",
+      "message": "Message",
+      "messagePlaceholder": "Tell me a little about your business and what you need help with…",
+      "submit": "Send Message",
+      "submitting": "Sending…",
+      "errorMsg": "Something went wrong. Please try again or contact us directly.",
+      "successHeading": "Message Sent!",
+      "successBody": "Thank you for reaching out. I'll be in touch within 1–2 business days.",
+      "sendAnother": "Send another message"
+    },
+    "info": {
+      "heading": "Contact Information",
+      "email": "Email",
+      "phone": "Phone",
+      "location": "Location",
+      "locationValue": "England, United Kingdom",
+      "freeConsultation": {
+        "heading": "Free Initial Consultation",
+        "body": "All new enquiries include a free, no-obligation initial consultation to discuss your needs and how I can help."
+      },
+      "qualifications": "Qualifications"
+    }
+  },
+  "footer": {
+    "tagline": "Professional accounting and financial advisory services. Trusted partner for small businesses.",
+    "quickLinks": "Quick Links",
+    "servicesLabel": "Services",
+    "copyright": "APRIA. All rights reserved.",
+    "credentials": "Qualified Accountant · ACCA · MAAT · AAT Member · ICAEW Member"
+  }
+}
