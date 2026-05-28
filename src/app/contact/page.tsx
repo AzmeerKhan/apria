@@ -16,8 +16,8 @@ const contactDetails = [
       </svg>
     ),
     label: en.contact.info.email,
-    value: "hello@apria.co.uk",
-    href: "mailto:hello@apria.co.uk",
+    value: en.contact.info.emailValue,
+    href: `mailto:${en.contact.info.emailValue}`,
   },
   {
     icon: (
@@ -26,8 +26,8 @@ const contactDetails = [
       </svg>
     ),
     label: en.contact.info.phone,
-    value: "+44 7700 000000",
-    href: "tel:+447700000000",
+    value: en.contact.info.phoneValue,
+    href: en.contact.info.phoneHref,
   },
   {
     icon: (

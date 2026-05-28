@@ -14,10 +14,11 @@ interface Props {
 
 export default function ContactForm({ enquiryType = "enquiry" }: Props) {
   const t = useTranslations("contact.form");
+  const tCommon = useTranslations("common");
   const isBooking = enquiryType === "booking";
   const [state, setState] = useState<FormState>("idle");
 
-  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.SyntheticEvent<HTMLFormElement>) {
     e.preventDefault();
     setState("submitting");
     const form = e.currentTarget;
@@ -75,7 +76,7 @@ export default function ContactForm({ enquiryType = "enquiry" }: Props) {
 
       <div className={styles.field}>
         <label className={styles.label} htmlFor="phone">
-          {t("phone")} <span className={styles.optional}>(optional)</span>
+          {t("phone")} <span className={styles.optional}>{tCommon("optional")}</span>
         </label>
         <input id="phone" name="phone" type="tel" placeholder={t("phonePlaceholder")} className={styles.input} />
       </div>

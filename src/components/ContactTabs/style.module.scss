@@ -2,16 +2,16 @@
 
 .tabs {
   display: flex;
-  gap: 0.5rem;
+  gap: 0.8rem;
   background: $color-slate;
   border-radius: $radius-full;
-  padding: 0.3rem;
-  margin-bottom: 1.75rem;
+  padding: 0.48rem;
+  margin-bottom: 2.8rem;
 }
 
 .tab {
   flex: 1;
-  padding: 0.625rem 1rem;
+  padding: 1rem 1.6rem;
   border-radius: $radius-full;
   border: none;
   background: transparent;

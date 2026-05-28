@@ -25,34 +25,34 @@
   width: 100%;
   max-width: $max-width;
   margin: 0 auto;
-  padding: 2rem $px-nav;
+  padding: 3.2rem $px-nav;
 
   @include sm {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+    padding-top: 8rem;
+    padding-bottom: 8rem;
   }
 }
 
 .grid {
   display: grid;
-  gap: 1.6rem;
+  gap: 2.56rem;
   align-items: center;
 
   @include lg {
     grid-template-columns: 3fr 2fr;
-    gap: 3rem;
+    gap: 4.8rem;
   }
 }
 
 .credentialRow {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 1.5rem;
+  gap: 0.8rem;
+  margin-bottom: 2.4rem;
 }
 
 .credBadge {
-  padding: 0.25rem 0.75rem;
+  padding: 0.4rem 1.2rem;
   border-radius: $radius-full;
   font-size: $fs-xs;
   font-weight: 600;
@@ -67,7 +67,7 @@
   font-weight: 800;
   color: $color-white;
   line-height: 1.2;
-  margin-bottom: 1rem;
+  margin-bottom: 1.6rem;
 
   @include sm {
     font-size: $fs-5xl;
@@ -77,9 +77,9 @@
 .desc {
   color: $color-on-dark;
   font-size: $fs-lg;
-  margin-bottom: 2rem;
+  margin-bottom: 3.2rem;
   line-height: 1.65;
-  max-width: 28rem;
+  max-width: 44.8rem;
 }
 
 .ctaDesktop {
@@ -100,7 +100,7 @@
 
 .ctaBtn {
   display: inline-block;
-  padding: 1rem 2rem;
+  padding: 1.6rem 3.2rem;
   border-radius: $radius-full;
   background: $color-teal;
   color: $color-white;
@@ -125,14 +125,14 @@
 .contactRow {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.25rem;
-  margin-top: 1.25rem;
+  gap: 2rem;
+  margin-top: 2rem;
 }
 
 .contactLink {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.64rem;
   color: $color-on-dark;
   font-size: $fs-sm;
   text-decoration: none;
@@ -148,10 +148,10 @@
   backdrop-filter: blur(4px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: $radius-2xl;
-  padding: 1.5rem;
+  padding: 2.4rem;
 
   @include sm {
-    padding: 2rem;
+    padding: 3.2rem;
   }
 }
 
@@ -161,7 +161,7 @@
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: $color-on-dark;
-  margin-bottom: 1.25rem;
+  margin-bottom: 2rem;
 }
 
 .servicesList {
@@ -170,13 +170,13 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 1.2rem;
 }
 
 .serviceItem {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 1.2rem;
   color: $color-white;
 }
 

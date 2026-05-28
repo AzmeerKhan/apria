@@ -9,13 +9,13 @@
 .inner {
   max-width: $max-width;
   margin: 0 auto;
-  padding: 3rem $px-nav;
+  padding: 4.8rem $px-nav;
 }
 
 .grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2.5rem;
+  gap: 4rem;
 
   @include md {
     grid-template-columns: repeat(3, 1fr);
@@ -30,8 +30,8 @@
 .logoRow {
   display: flex;
   align-items: center;
-  gap: 0.625rem;
-  margin-bottom: 1rem;
+  gap: 1rem;
+  margin-bottom: 1.6rem;
   text-decoration: none;
 }
 
@@ -50,17 +50,17 @@
   font-size: $fs-sm;
   color: $color-on-dark;
   line-height: 1.625;
-  margin-bottom: 1rem;
+  margin-bottom: 1.6rem;
 }
 
 .badges {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 0.8rem;
 }
 
 .badge {
-  padding: 0.25rem 0.75rem;
+  padding: 0.4rem 1.2rem;
   border-radius: $radius-full;
   background: rgba(255, 255, 255, 0.1);
   font-size: $fs-xs;
@@ -79,7 +79,7 @@
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: $color-on-dark-dim;
-  margin-bottom: 1rem;
+  margin-bottom: 1.6rem;
 }
 
 .linkList {
@@ -88,7 +88,7 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.625rem;
+  gap: 1rem;
 }
 
 .footerLink {
@@ -99,19 +99,19 @@
 
   &:hover {
     color: $color-white;
-    padding-left: 0.25rem;
+    padding-left: 0.4rem;
   }
 }
 
 .bottom {
-  margin-top: 2.5rem;
-  padding-top: 1.5rem;
+  margin-top: 4rem;
+  padding-top: 2.4rem;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  gap: 0.75rem;
+  gap: 1.2rem;
   font-size: $fs-xs;
   color: $color-on-dark-dim;
 

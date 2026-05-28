@@ -29,23 +29,23 @@ $color-error-bg:     #fef2f2;
 $color-error-border: #fecaca;
 
 // Font sizes
-$fs-xs:   0.75rem;    // 12px
-$fs-sm:   0.875rem;   // 14px
-$fs-base: 1rem;       // 16px
-$fs-md:   1.0625rem;  // 17px
-$fs-lg:   1.125rem;   // 18px
-$fs-xl:   1.25rem;    // 20px
-$fs-2xl:  1.5rem;     // 24px
-$fs-3xl:  1.875rem;   // 30px
-$fs-4xl:  2.25rem;    // 36px
-$fs-5xl:  3rem;       // 48px
+$fs-xs:   1.2rem;    // 12px
+$fs-sm:   1.4rem;    // 14px
+$fs-base: 1.6rem;    // 16px
+$fs-md:   1.7rem;    // 17px
+$fs-lg:   1.8rem;    // 18px
+$fs-xl:   2rem;      // 20px
+$fs-2xl:  2.4rem;    // 24px
+$fs-3xl:  3rem;      // 30px
+$fs-4xl:  3.6rem;    // 36px
+$fs-5xl:  4.8rem;    // 48px
 
 // Border radius
-$radius-sm:   0.5rem;
-$radius-md:   0.75rem;
-$radius-lg:   1rem;
-$radius-xl:   1.25rem;
-$radius-2xl:  1.5rem;
+$radius-sm:   0.8rem;
+$radius-md:   1.2rem;
+$radius-lg:   1.6rem;
+$radius-xl:   2rem;
+$radius-2xl:  2.4rem;
 $radius-full: 9999px;
 
 // Shadows
@@ -59,9 +59,9 @@ $t-base: 0.2s ease;
 $t-slow: 0.3s ease;
 
 // Layout
-$max-width:  80rem;   // 1280px
-$px-section: 1rem;    // page section horizontal padding
-$px-nav:     1.5rem;  // navbar / footer horizontal padding
+$max-width:  128rem;  // 1280px
+$px-section: 1.6rem;  // page section horizontal padding
+$px-nav:     2.4rem;  // navbar / footer horizontal padding
 
 // Responsive mixins
 @mixin xs { @media (min-width: 480px)  { @content; } }
