@@ -25,7 +25,7 @@ export default function StaggerGrid({ children, className }: Props) {
       variants={container}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: true, amount: 0.15 }}
+      viewport={{ once: true, amount: 0.25, margin: "0px 0px -60px 0px" }}
     >
       {Children.map(children, (child, i) => (
         <motion.div key={i} variants={item}>

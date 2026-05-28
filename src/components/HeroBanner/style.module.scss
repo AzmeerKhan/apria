@@ -1,4 +1,4 @@
-@use '../../styles/variables' as *;
+@use "../../styles/variables" as *;
 
 .section {
   position: relative;
@@ -25,7 +25,7 @@
   width: 100%;
   max-width: $max-width;
   margin: 0 auto;
-  padding: 4rem $px-nav;
+  padding: 2rem $px-nav;
 
   @include sm {
     padding-top: 5rem;
@@ -35,7 +35,7 @@
 
 .grid {
   display: grid;
-  gap: 2rem;
+  gap: 1.6rem;
   align-items: center;
 
   @include lg {
@@ -108,7 +108,9 @@
   font-size: $fs-base;
   text-decoration: none;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-  transition: filter $t-base, transform $t-base;
+  transition:
+    filter $t-base,
+    transform $t-base;
 
   &:hover {
     filter: brightness(1.1);
@@ -117,6 +119,27 @@
 
   &:active {
     transform: scale(0.95);
+  }
+}
+
+.contactRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  margin-top: 1.25rem;
+}
+
+.contactLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: $color-on-dark;
+  font-size: $fs-sm;
+  text-decoration: none;
+  transition: color $t-base;
+
+  &:hover {
+    color: $color-white;
   }
 }
 

@@ -1,0 +1,35 @@
+@use '../../styles/variables' as *;
+
+.tabs {
+  display: flex;
+  gap: 0.5rem;
+  background: $color-slate;
+  border-radius: $radius-full;
+  padding: 0.3rem;
+  margin-bottom: 1.75rem;
+}
+
+.tab {
+  flex: 1;
+  padding: 0.625rem 1rem;
+  border-radius: $radius-full;
+  border: none;
+  background: transparent;
+  color: $color-gray-500;
+  font-size: $fs-sm;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background $t-base, color $t-base, box-shadow $t-base;
+
+  &:hover:not(.tabActive) {
+    color: $color-navy;
+    background: rgba(255, 255, 255, 0.6);
+  }
+}
+
+.tabActive {
+  background: $color-navy;
+  color: $color-white;
+  box-shadow: $shadow-sm;
+}

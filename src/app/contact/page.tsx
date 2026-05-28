@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import ContactForm from "@/components/ContactForm";
+import ContactTabs from "@/components/ContactTabs";
 import en from "@/i18n/messages/en.json";
 import styles from "./page.module.scss";
 
@@ -57,7 +57,7 @@ export default function ContactPage() {
         <div className={styles.layout}>
           <div className={styles.formCard}>
             <h2 className={styles.formTitle}>{en.contact.form.heading}</h2>
-            <ContactForm />
+            <ContactTabs />
           </div>
 
           <div className={styles.sidebar}>

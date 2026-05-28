@@ -137,6 +137,28 @@
   margin-right: auto;
 }
 
+.ctaContacts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.ctaContact {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: $color-on-dark;
+  font-size: $fs-sm;
+  text-decoration: none;
+  transition: color $t-base;
+
+  &:hover {
+    color: $color-white;
+  }
+}
+
 .ctaBtn {
   display: inline-block;
   padding: 1rem 2rem;
