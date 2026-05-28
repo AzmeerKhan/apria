@@ -11,6 +11,7 @@ import {
 } from "framer-motion";
 import accaLogo from "@/assets/images/acca-logo.png";
 import aatLogo from "@/assets/images/aat-logo.png";
+import styles from "./style.module.scss";
 
 function AnimatedCount({
   to,
@@ -47,42 +48,30 @@ export default function StatsBar() {
   const inView = useInView(ref, { once: true, amount: 0.5 });
 
   return (
-    <section ref={ref} className="bg-navy overflow-hidden py-8 md:py-0">
-      {/* Desktop layout */}
-      <div className="hidden md:grid max-w-7xl mx-auto grid-cols-[1fr_5rem_1fr] px-6">
-        {/* Left — animated counters */}
+    <section ref={ref} className={styles.section}>
+      <div className={styles.desktop}>
         <motion.div
-          className="flex gap-12 lg:gap-22 justify-center items-center py-8 pr-12 lg:pr-22"
+          className={styles.statsCol}
           initial={{ opacity: 0, x: -160 }}
           animate={inView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <div className="text-center">
-            <div className="text-3xl lg:text-4xl font-extrabold text-white">
-              <AnimatedCount
-                to={5}
-                suffix="+"
-                inView={inView}
-                duration={0.5}
-              />
+          <div className={styles.statItem}>
+            <div className={styles.statCount}>
+              <AnimatedCount to={5} suffix="+" inView={inView} duration={0.5} />
             </div>
-            <div className="text-xs lg:text-sm text-blue-200 mt-2 font-medium uppercase tracking-wide">
-              Years Experience
-            </div>
+            <div className={styles.statLabel}>Years Experience</div>
           </div>
-          <div className="text-center">
-            <div className="text-3xl lg:text-4xl font-extrabold text-white">
+          <div className={styles.statItem}>
+            <div className={styles.statCount}>
               <AnimatedCount to={100} suffix="+" inView={inView} />
             </div>
-            <div className="text-xs lg:text-sm text-blue-200 mt-2 font-medium uppercase tracking-wide">
-              Clients Served
-            </div>
+            <div className={styles.statLabel}>Clients Served</div>
           </div>
         </motion.div>
 
-        {/* Divider — forward slash */}
         <motion.svg
-          className="w-full h-full"
+          className={styles.dividerSvg}
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
           transition={{ duration: 0.4, delay: 0.35 }}
@@ -97,87 +86,53 @@ export default function StatsBar() {
           />
         </motion.svg>
 
-        {/* Right — logos */}
         <motion.div
-          className="flex items-center justify-center gap-12 lg:gap-22 py-8 pl-12 lg:pl-22"
+          className={styles.logosCol}
           initial={{ opacity: 0, x: 160 }}
           animate={inView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
         >
-          <Image
-            src={accaLogo}
-            alt="ACCA"
-            height={80}
-            className="object-contain opacity-90 lg:h-[100px]"
-          />
-          <Image
-            src={aatLogo}
-            alt="AAT"
-            height={80}
-            className="object-contain opacity-90 lg:h-[100px]"
-          />
+          <Image src={accaLogo} alt="ACCA" height={80} className={styles.logoImg} />
+          <Image src={aatLogo} alt="AAT" height={80} className={styles.logoImg} />
         </motion.div>
       </div>
 
-      {/* Mobile layout */}
-      <div className="md:hidden max-w-xl mx-auto px-4 space-y-6">
-        {/* Stats */}
+      <div className={styles.mobile}>
         <motion.div
-          className="flex gap-8 justify-center items-center"
+          className={styles.statsMobile}
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <div className="text-center">
-            <div className="text-2xl sm:text-3xl font-extrabold text-white">
-              <AnimatedCount
-                to={5}
-                suffix="+"
-                inView={inView}
-                duration={0.5}
-              />
+          <div className={styles.statItem}>
+            <div className={styles.statCountMobile}>
+              <AnimatedCount to={5} suffix="+" inView={inView} duration={0.5} />
             </div>
-            <div className="text-xs text-blue-200 mt-1 font-medium uppercase tracking-wide">
-              Years Experience
-            </div>
+            <div className={styles.statLabelMobile}>Years Experience</div>
           </div>
-          <div className="text-center">
-            <div className="text-2xl sm:text-3xl font-extrabold text-white">
+          <div className={styles.statItem}>
+            <div className={styles.statCountMobile}>
               <AnimatedCount to={100} suffix="+" inView={inView} />
             </div>
-            <div className="text-xs text-blue-200 mt-1 font-medium uppercase tracking-wide">
-              Clients Served
-            </div>
+            <div className={styles.statLabelMobile}>Clients Served</div>
           </div>
         </motion.div>
 
-        {/* Divider */}
         <motion.div
-          className="h-px bg-white/25 w-full max-w-[200px] mx-auto"
+          className={styles.dividerMobile}
           initial={{ opacity: 0, scaleX: 0 }}
           animate={inView ? { opacity: 1, scaleX: 1 } : {}}
           transition={{ duration: 0.4, delay: 0.2 }}
         />
 
-        {/* Logos */}
         <motion.div
-          className="flex items-center justify-center gap-8"
+          className={styles.logosMobile}
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
         >
-          <Image
-            src={accaLogo}
-            alt="ACCA"
-            height={60}
-            className="object-contain opacity-90 w-auto h-[60px]"
-          />
-          <Image
-            src={aatLogo}
-            alt="AAT"
-            height={60}
-            className="object-contain opacity-90 w-auto h-[60px]"
-          />
+          <Image src={accaLogo} alt="ACCA" height={60} className={styles.logoImgMobile} />
+          <Image src={aatLogo} alt="AAT" height={60} className={styles.logoImgMobile} />
         </motion.div>
       </div>
     </section>

@@ -1,0 +1,277 @@
+@use '../../styles/variables' as *;
+
+// ─── Hero section ─────────────────────────────────────────────────────────────
+
+.hero {
+  background: $color-slate;
+  padding: 4rem $px-section;
+  border-bottom: 1px solid $color-gray-100;
+}
+
+.container {
+  @include container;
+}
+
+.badge {
+  color: $color-teal;
+  font-size: $fs-sm;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.heroTitle {
+  font-size: $fs-4xl;
+  font-weight: 700;
+  color: $color-navy;
+  margin-bottom: 1rem;
+}
+
+.heroSub {
+  color: $color-gray-500;
+  max-width: 36rem;
+  line-height: 1.65;
+}
+
+// ─── About / experience section ───────────────────────────────────────────────
+
+.about {
+  padding: 4rem $px-section;
+}
+
+.aboutGrid {
+  @include container;
+  display: grid;
+  gap: 3rem;
+  align-items: start;
+
+  @include md {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.profileCard {
+  border-radius: $radius-2xl;
+  background: $color-teal-light;
+  aspect-ratio: 1;
+  max-width: 24rem;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(40, 152, 184, 0.2);
+  gap: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.profileGradient {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 30%, rgba(40, 152, 184, 0.15), transparent 60%);
+}
+
+.profileIcon {
+  width: 6rem;
+  height: 6rem;
+  color: rgba(40, 152, 184, 0.4);
+  position: relative;
+  z-index: 1;
+}
+
+.credBadges {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.credBadge {
+  padding: 0.25rem 0.75rem;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: $radius-full;
+  font-size: $fs-xs;
+  font-weight: 700;
+  color: $color-navy;
+  border: 1px solid rgba(40, 152, 184, 0.2);
+  box-shadow: $shadow-sm;
+}
+
+.expTitle {
+  font-size: $fs-2xl;
+  font-weight: 700;
+  color: $color-navy;
+  margin-bottom: 1.25rem;
+}
+
+.expBody {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  color: $color-gray-600;
+  line-height: 1.65;
+}
+
+.expCta {
+  margin-top: 2rem;
+}
+
+.ctaBtn {
+  display: inline-block;
+  padding: 0.875rem 1.75rem;
+  border-radius: $radius-full;
+  background: $color-navy;
+  color: $color-white;
+  font-weight: 600;
+  font-size: $fs-sm;
+  text-decoration: none;
+  box-shadow: $shadow-md;
+  transition: background $t-base, transform $t-base;
+
+  &:hover {
+    background: $color-navy-dark;
+    transform: scale(1.05);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+// ─── Qualifications section ───────────────────────────────────────────────────
+
+.quals {
+  background: $color-slate;
+  padding: 4rem $px-section;
+}
+
+.qualsTitle {
+  font-size: $fs-2xl;
+  font-weight: 700;
+  color: $color-navy;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.qualsGrid {
+  display: grid;
+  gap: 1.25rem;
+
+  @include sm {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.qualCard {
+  background: $color-white;
+  border-radius: $radius-2xl;
+  padding: 1.75rem;
+  border: 1px solid $color-gray-100;
+  box-shadow: $shadow-sm;
+  display: flex;
+  gap: 1.25rem;
+  transition: box-shadow $t-base, transform $t-base;
+
+  &:hover {
+    box-shadow: $shadow-md;
+    transform: scale(1.02);
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+.qualBadge {
+  flex-shrink: 0;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: $radius-lg;
+  background: $color-navy;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $color-white;
+  font-weight: 700;
+  font-size: $fs-xs;
+  letter-spacing: 0.05em;
+}
+
+.qualName {
+  font-weight: 600;
+  color: $color-navy;
+  margin-bottom: 0.375rem;
+  font-size: $fs-sm;
+  line-height: 1.4;
+}
+
+.qualDesc {
+  font-size: $fs-xs;
+  color: $color-gray-500;
+  line-height: 1.65;
+}
+
+// ─── Values section ───────────────────────────────────────────────────────────
+
+.values {
+  padding: 4rem $px-section;
+}
+
+.valuesTitle {
+  font-size: $fs-2xl;
+  font-weight: 700;
+  color: $color-navy;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.valuesGrid {
+  display: grid;
+  gap: 1.25rem;
+
+  @include sm {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include lg {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.valueCard {
+  padding: 1.5rem;
+  border-radius: $radius-2xl;
+  border: 1px solid $color-gray-100;
+  background: $color-white;
+  text-align: center;
+  box-shadow: $shadow-sm;
+  transition: border-color $t-base, box-shadow $t-base, transform $t-base;
+
+  &:hover {
+    border-color: $color-teal;
+    box-shadow: $shadow-md;
+    transform: scale(1.02);
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+.valueTitle {
+  font-weight: 600;
+  color: $color-navy;
+  margin-bottom: 0.5rem;
+}
+
+.valueDesc {
+  font-size: $fs-sm;
+  color: $color-gray-500;
+  line-height: 1.65;
+}

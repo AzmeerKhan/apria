@@ -15,42 +15,60 @@ npx tsc --noEmit  # type-check without building
 
 ## Architecture
 
-- **Framework**: Next.js 16 (App Router) with React 19, TypeScript 5, Tailwind CSS 4
-- **Source root**: `src/` - all app code lives here; path alias `@/*` maps to `src/*`
-- **Routing**: `src/app/` uses file-system routing. Layouts in `layout.tsx`, pages in `page.tsx`, loading states in `loading.tsx`, error boundaries in `error.tsx`
-- **Styling**: Tailwind CSS v4 via `@tailwindcss/postcss`. Global styles in `src/app/globals.css`
+**Framework**: Next.js 16 (App Router), React 19, TypeScript 5, SCSS Modules  
+**Source root**: `src/` — path alias `@/*` maps to `src/*`
 
-## Agent skills
+### Routing
 
-This project uses the `vercel-labs/agent-skills` package. The following skills are active and must be followed:
+File-system routing under `src/app/`. Four pages: `/` `/services` `/about` `/contact`. All pages are Server Components (no `"use client"`) except where noted. The layout at `src/app/layout.tsx` wraps every page with `<Navbar>` and `<Footer>`.
 
-- **vercel-react-best-practices** - React/Next.js patterns and conventions
-- **vercel-composition-patterns** - Component composition and structure
-- **web-design-guidelines** - UI/UX design standards
-- **vercel-optimize** - Performance optimisation
-- **vercel-react-view-transitions** - View transition API patterns
-- **deploy-to-vercel** - Deployment workflow
-- **vercel-cli-with-tokens** - Vercel CLI usage
+### Styling system
 
-Skills are located in `.agents/skills/` (gitignored).
+No Tailwind — all styling is SCSS Modules.
 
-### MCP servers
+- **Design tokens**: `src/styles/_variables.scss` — single source of truth for all colors (`$color-navy`, `$color-teal`, etc.), font sizes (`$fs-xs` → `$fs-5xl`), spacing, radii, shadows, transitions, breakpoints, and responsive mixins (`@include sm/md/lg/xl`).
+- **Global styles**: `src/app/globals.scss` — resets, `html`/`body`/`main` base rules, and all shared `@keyframes` (`fadeInUp`, `fadeIn`, `slideDown`, `scaleIn`, etc.) that component modules reference by name.
+- **Component styles**: each component has a co-located `style.module.scss`. Page-level styles live in `page.module.scss` next to the route file.
+- Every SCSS file that uses variables starts with `@use '../../styles/variables' as *;` (adjust `../` depth to match file location).
 
-- **next-devtools** - MCP server for Next.js development tooling (route inspection, build analysis, etc.). Planned for use in this project; not yet configured. See [next-devtools docs](https://next-devtools.vercel.app) when ready to set up.
+To retheme: edit `src/styles/_variables.scss` only.
 
-## Project overview
+### Content / i18n
 
-Apria is a static portfolio/introduction website for a professional accounting firm. The site introduces services, builds trust with potential clients, and provides a contact channel. The owner holds ACCA and MAAT qualifications and is a member of AAT and ICAEW with 5 years of experience across financial reporting, tax planning, and business advisory.
+All copy lives in `src/i18n/messages/en.json`. Components import it directly (`import en from "@/i18n/messages/en.json"`) for Server Components, or use `useTranslations` from `next-intl` for Client Components. `next-intl` is configured at `src/i18n/request.ts` (single locale: `en`).
 
-**Site type**: Static, SEO-optimised, fully responsive  
-**Tone**: Professional, clean, finance/accounting industry  
-**Pages**: Home, Services, About, Contact  
-**Key feature**: Contact form for potential client enquiries
+### Constants
+
+- `src/constants/routes.ts` — `ROUTES` object and `NAV_LINKS` array (used by Navbar and Footer).
+- `src/constants/services.ts` — `SERVICE_IDS`, `SERVICE_CATEGORIES`, `SERVICE_SELECT_OPTIONS`, `HERO_SLIDES`.
+- `src/constants/credentials.ts` — `CREDENTIALS`, `CREDENTIAL_BADGES`.
+
+### Shared components
+
+Components in `src/components/` are reused across multiple pages:
+
+- `Navbar` / `Footer` — layout chrome, always rendered via `layout.tsx`.
+- `HeroBanner` — hero section on the home page with framer-motion entrance animations; `"use client"`.
+- `HeroSlider` — animated sliding hero (alternative hero; `"use client"`).
+- `StatsBar` — animated counters + logo strip; `"use client"` (uses `useInView`).
+- `ServiceCard` — card used in the home and services grids.
+- `FadeIn` — `motion.div` wrapper for scroll-triggered fade-in; accepts `className` and `direction` props; `"use client"`.
+- `StaggerGrid` — `motion.div` grid wrapper that staggers children on scroll; accepts `className`; `"use client"`.
+- `ContactForm` — controlled form with Formspree submission; `"use client"`.
+
+### Animation pattern
+
+Framer Motion is used throughout. `FadeIn` and `StaggerGrid` are the standard scroll-trigger wrappers — pass the grid/layout class via `className` from the parent's SCSS module. Direct `motion.*` elements in components use `initial`/`animate` with `useInView` for imperative control.
 
 ## Key conventions
 
-- Prefer React Server Components by default; add `"use client"` only when needed (interactivity, browser APIs, hooks)
-- Data fetching belongs in Server Components using `async/await` - avoid `useEffect` for data loading
-- Co-locate components with the route that owns them; extract to `src/components/` only when shared across routes
-- Use `@/` alias for all internal imports, never relative paths that traverse `..`
-- Static export compatible - avoid server-only APIs unless they work with `output: "export"`
+- Prefer React Server Components; add `"use client"` only for interactivity, browser APIs, or hooks.
+- All copy goes in `en.json`, not hardcoded in components.
+- Add new route constants to `ROUTES` and `NAV_LINKS` in `src/constants/routes.ts`.
+- Static-export compatible — no server-only APIs.
+- Use `@/` alias for all internal imports.
+- **No section-label comments** — `{/* Services */}`, `{/* Desktop layout */}`, `{/* Left */}` and similar comments that restate what the class name or element already communicates are forbidden. Only add a comment when the *why* is non-obvious (a workaround, a subtle invariant, a browser quirk).
+
+## Project overview
+
+Apria is a static marketing site for a professional accounting firm. The owner holds ACCA and MAAT qualifications and is a member of AAT and ICAEW. The contact form submits to Formspree (endpoint placeholder in `ContactForm/index.tsx`).

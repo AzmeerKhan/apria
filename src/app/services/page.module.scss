@@ -1,0 +1,205 @@
+@use '../../styles/variables' as *;
+
+// ─── Hero section ─────────────────────────────────────────────────────────────
+
+.hero {
+  background: $color-slate;
+  padding: 4rem $px-section;
+  border-bottom: 1px solid $color-gray-100;
+}
+
+.container {
+  @include container;
+}
+
+.badge {
+  color: $color-teal;
+  font-size: $fs-sm;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.heroTitle {
+  font-size: $fs-4xl;
+  font-weight: 700;
+  color: $color-navy;
+  margin-bottom: 1rem;
+}
+
+.heroSub {
+  color: $color-gray-500;
+  max-width: 36rem;
+  line-height: 1.65;
+}
+
+// ─── Service categories ───────────────────────────────────────────────────────
+
+.serviceSection {
+  padding: 3.5rem $px-section;
+
+  &:nth-child(even) {
+    background: $color-slate;
+  }
+}
+
+.categoryHeader {
+  @include container;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.categoryBadge {
+  padding: 0.25rem 0.75rem;
+  border-radius: $radius-full;
+  background: $color-navy;
+  color: $color-white;
+  font-size: $fs-xs;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.categoryDivider {
+  flex: 1;
+  height: 1px;
+  background: $color-gray-200;
+}
+
+.servicesGrid {
+  @include container;
+  display: grid;
+  gap: 1.5rem;
+
+  @include sm {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include lg {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.serviceCard {
+  background: $color-white;
+  border-radius: $radius-2xl;
+  border: 1px solid $color-gray-100;
+  padding: 1.75rem;
+  box-shadow: $shadow-sm;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow $t-base, transform $t-base;
+
+  &:hover {
+    box-shadow: $shadow-md;
+    transform: scale(1.02);
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+.serviceIconWrap {
+  width: 3rem;
+  height: 3rem;
+  border-radius: $radius-lg;
+  background: $color-teal-light;
+  color: $color-teal;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  flex-shrink: 0;
+}
+
+.serviceTitle {
+  font-size: $fs-lg;
+  font-weight: 700;
+  color: $color-navy;
+  margin-bottom: 0.5rem;
+}
+
+.serviceSummary {
+  color: $color-gray-500;
+  font-size: $fs-sm;
+  margin-bottom: 1.25rem;
+  line-height: 1.65;
+}
+
+.servicePoints {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: auto;
+}
+
+.servicePoint {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.625rem;
+  font-size: $fs-sm;
+  color: $color-gray-600;
+}
+
+.checkIcon {
+  width: 1rem;
+  height: 1rem;
+  color: $color-green;
+  flex-shrink: 0;
+  margin-top: 0.125rem;
+}
+
+// ─── CTA section ─────────────────────────────────────────────────────────────
+
+.cta {
+  background: $color-navy;
+  padding: 4rem $px-section;
+}
+
+.ctaContent {
+  @include container;
+  max-width: 48rem;
+  text-align: center;
+}
+
+.ctaTitle {
+  font-size: $fs-2xl;
+  font-weight: 700;
+  color: $color-white;
+  margin-bottom: 0.75rem;
+}
+
+.ctaBody {
+  color: $color-on-dark;
+  margin-bottom: 1.75rem;
+  line-height: 1.65;
+}
+
+.ctaBtn {
+  display: inline-block;
+  padding: 0.875rem 2rem;
+  border-radius: $radius-full;
+  background: $color-white;
+  color: $color-navy;
+  font-weight: 600;
+  font-size: $fs-sm;
+  text-decoration: none;
+  box-shadow: $shadow-lg;
+  transition: background $t-base, transform $t-base;
+
+  &:hover {
+    background: $color-teal-light;
+    transform: scale(1.05);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}

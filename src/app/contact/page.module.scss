@@ -1,0 +1,187 @@
+@use '../../styles/variables' as *;
+
+// ─── Hero section ─────────────────────────────────────────────────────────────
+
+.hero {
+  background: $color-slate;
+  padding: 4rem $px-section;
+  border-bottom: 1px solid $color-gray-100;
+}
+
+.container {
+  @include container;
+}
+
+.badge {
+  color: $color-teal;
+  font-size: $fs-sm;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.heroTitle {
+  font-size: $fs-4xl;
+  font-weight: 700;
+  color: $color-navy;
+  margin-bottom: 1rem;
+}
+
+.heroSub {
+  color: $color-gray-500;
+  max-width: 36rem;
+  line-height: 1.65;
+}
+
+// ─── Main section ─────────────────────────────────────────────────────────────
+
+.main {
+  padding: 4rem $px-section;
+}
+
+.layout {
+  @include container;
+  display: grid;
+  gap: 2.5rem;
+
+  @include md {
+    grid-template-columns: 3fr 2fr;
+  }
+}
+
+// ─── Form card ────────────────────────────────────────────────────────────────
+
+.formCard {
+  background: $color-white;
+  border-radius: $radius-2xl;
+  border: 1px solid $color-gray-100;
+  box-shadow: $shadow-sm;
+  padding: 2rem;
+}
+
+.formTitle {
+  font-size: $fs-xl;
+  font-weight: 700;
+  color: $color-navy;
+  margin-bottom: 1.5rem;
+}
+
+// ─── Sidebar ──────────────────────────────────────────────────────────────────
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.contactCard {
+  background: $color-navy;
+  border-radius: $radius-2xl;
+  padding: 1.75rem;
+  color: $color-white;
+}
+
+.contactTitle {
+  font-size: $fs-lg;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+}
+
+.contactList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.contactItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.contactIcon {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: $radius-md;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: $color-on-dark;
+}
+
+.contactLabel {
+  font-size: $fs-xs;
+  color: $color-on-dark-dim;
+  margin-bottom: 0.125rem;
+}
+
+.contactValue {
+  font-size: $fs-sm;
+  color: $color-white;
+}
+
+.contactLink {
+  font-size: $fs-sm;
+  color: $color-white;
+  text-decoration: none;
+  transition: color $t-base;
+
+  &:hover {
+    color: $color-on-dark;
+  }
+}
+
+.consultCard {
+  background: $color-teal-light;
+  border-radius: $radius-2xl;
+  padding: 1.75rem;
+  border: 1px solid rgba(40, 152, 184, 0.2);
+}
+
+.consultTitle {
+  font-weight: 600;
+  color: $color-navy;
+  margin-bottom: 0.5rem;
+}
+
+.consultBody {
+  font-size: $fs-sm;
+  color: $color-gray-600;
+  line-height: 1.65;
+}
+
+.qualsCard {
+  border-radius: $radius-2xl;
+  padding: 1.75rem;
+  border: 1px solid $color-gray-100;
+  background: $color-white;
+  box-shadow: $shadow-sm;
+}
+
+.qualsTitle {
+  font-weight: 600;
+  color: $color-navy;
+  margin-bottom: 0.75rem;
+}
+
+.qualsBadges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.qualBadge {
+  padding: 0.25rem 0.75rem;
+  border-radius: $radius-full;
+  background: $color-slate;
+  color: $color-navy;
+  font-size: $fs-xs;
+  font-weight: 500;
+  border: 1px solid $color-gray-200;
+}

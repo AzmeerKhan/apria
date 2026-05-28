@@ -1,0 +1,79 @@
+// Edit these to change the site theme
+
+// Brand
+$color-navy:        #1c3461;
+$color-navy-dark:   #0f1e3d;
+$color-teal:        #2898b8;
+$color-teal-dark:   #1a607a;
+$color-teal-light:  #e0f2fb;
+$color-green:       #28804a;
+$color-green-light: #dcf5e7;
+
+// Neutrals
+$color-white:    #ffffff;
+$color-slate:    #f8fafc;  // light section backgrounds
+$color-gray-100: #f3f4f6;  // borders, dividers
+$color-gray-200: #e5e7eb;  // form borders
+$color-gray-400: #9ca3af;  // placeholders, optional labels
+$color-gray-500: #6b7280;  // secondary / muted text
+$color-gray-600: #4b5563;  // body text
+$color-gray-700: #374151;  // primary text
+
+// Text on dark/navy backgrounds
+$color-on-dark:     #bfdbfe;
+$color-on-dark-dim: #93c5fd;
+
+// Error
+$color-error:        #ef4444;
+$color-error-bg:     #fef2f2;
+$color-error-border: #fecaca;
+
+// Font sizes
+$fs-xs:   0.75rem;    // 12px
+$fs-sm:   0.875rem;   // 14px
+$fs-base: 1rem;       // 16px
+$fs-md:   1.0625rem;  // 17px
+$fs-lg:   1.125rem;   // 18px
+$fs-xl:   1.25rem;    // 20px
+$fs-2xl:  1.5rem;     // 24px
+$fs-3xl:  1.875rem;   // 30px
+$fs-4xl:  2.25rem;    // 36px
+$fs-5xl:  3rem;       // 48px
+
+// Border radius
+$radius-sm:   0.5rem;
+$radius-md:   0.75rem;
+$radius-lg:   1rem;
+$radius-xl:   1.25rem;
+$radius-2xl:  1.5rem;
+$radius-full: 9999px;
+
+// Shadows
+$shadow-sm: 0 1px 4px rgba(0, 0, 0, 0.05);
+$shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+$shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+
+// Transitions
+$t-fast: 0.15s ease;
+$t-base: 0.2s ease;
+$t-slow: 0.3s ease;
+
+// Layout
+$max-width:  80rem;   // 1280px
+$px-section: 1rem;    // page section horizontal padding
+$px-nav:     1.5rem;  // navbar / footer horizontal padding
+
+// Responsive mixins
+@mixin xs { @media (min-width: 480px)  { @content; } }
+@mixin sm { @media (min-width: 640px)  { @content; } }
+@mixin md { @media (min-width: 768px)  { @content; } }
+@mixin lg { @media (min-width: 1024px) { @content; } }
+@mixin xl { @media (min-width: 1280px) { @content; } }
+
+@mixin container {
+  max-width: $max-width;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $px-section;
+  padding-right: $px-section;
+}

@@ -1,17 +1,19 @@
+@use '../../styles/variables' as *;
+
 .header {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: #fff;
-  border-bottom: 1px solid #f3f4f6;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
-  transition: box-shadow 0.2s ease;
+  background: $color-white;
+  border-bottom: 1px solid $color-gray-100;
+  box-shadow: $shadow-sm;
+  transition: box-shadow $t-base;
 }
 
 .nav {
-  max-width: 80rem;
+  max-width: $max-width;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 $px-nav;
   height: 4rem;
   display: flex;
   align-items: center;
@@ -23,7 +25,7 @@
   align-items: center;
   gap: 0.625rem;
   text-decoration: none;
-  transition: opacity 0.2s;
+  transition: opacity $t-base;
 
   &:hover {
     opacity: 0.85;
@@ -31,9 +33,9 @@
 }
 
 .logoText {
-  color: #1c3461;
+  color: $color-navy;
   font-weight: 700;
-  font-size: 1.25rem;
+  font-size: $fs-xl;
   letter-spacing: 0.12em;
 }
 
@@ -42,18 +44,18 @@
   align-items: center;
   gap: 2rem;
 
-  @media (min-width: 768px) {
+  @include md {
     display: flex;
   }
 }
 
 .link {
   position: relative;
-  font-size: 1rem;
+  font-size: $fs-base;
   font-weight: 500;
-  color: #4b5563;
+  color: $color-gray-600;
   text-decoration: none;
-  transition: color 0.2s;
+  transition: color $t-base;
 
   &::after {
     content: "";
@@ -62,13 +64,13 @@
     left: 0;
     width: 0;
     height: 2px;
-    background: #2898b8;
+    background: $color-teal;
     border-radius: 2px;
     transition: width 0.25s ease;
   }
 
   &:hover {
-    color: #1c3461;
+    color: $color-navy;
 
     &::after {
       width: 100%;
@@ -77,7 +79,7 @@
 }
 
 .linkActive {
-  color: #2898b8;
+  color: $color-teal;
 
   &::after {
     width: 100%;
@@ -87,16 +89,16 @@
 .ctaBtn {
   margin-left: 0.5rem;
   padding: 0.5rem 1.25rem;
-  border-radius: 9999px;
-  background-color: #1c3461;
-  color: #fff;
-  font-size: 1rem;
+  border-radius: $radius-full;
+  background-color: $color-navy;
+  color: $color-white;
+  font-size: $fs-base;
   font-weight: 500;
   text-decoration: none;
-  transition: background-color 0.2s, transform 0.2s ease;
+  transition: background-color $t-base, transform $t-base;
 
   &:hover {
-    background-color: #0f1e3d;
+    background-color: $color-navy-dark;
     transform: scale(1.05);
   }
 
@@ -113,66 +115,66 @@
   background: none;
   border: none;
   cursor: pointer;
-  color: #4b5563;
-  border-radius: 0.5rem;
-  transition: color 0.2s, background 0.2s;
+  color: $color-gray-600;
+  border-radius: $radius-sm;
+  transition: color $t-base, background $t-base;
 
   &:hover {
-    color: #1c3461;
-    background: #f3f4f6;
+    color: $color-navy;
+    background: $color-gray-100;
   }
 
-  @media (min-width: 768px) {
+  @include md {
     display: none;
   }
 }
 
 .mobileMenu {
-  border-top: 1px solid #f3f4f6;
-  background: #fff;
-  padding: 1rem 1.5rem 1.25rem;
+  border-top: 1px solid $color-gray-100;
+  background: $color-white;
+  padding: 1rem $px-nav 1.25rem;
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
   animation: slideDown 0.2s ease-out both;
 
-  @media (min-width: 768px) {
+  @include md {
     display: none;
   }
 }
 
 .mobileLink {
   padding: 0.625rem 0;
-  font-size: 1rem;
+  font-size: $fs-base;
   font-weight: 500;
-  color: #374151;
+  color: $color-gray-700;
   text-decoration: none;
-  border-bottom: 1px solid #f9fafb;
-  transition: color 0.2s, padding-left 0.2s;
+  border-bottom: 1px solid $color-gray-100;
+  transition: color $t-base, padding-left $t-base;
 
   &:hover {
-    color: #1c3461;
+    color: $color-navy;
     padding-left: 0.25rem;
   }
 }
 
 .mobileLinkActive {
-  color: #2898b8;
+  color: $color-teal;
 }
 
 .mobileCta {
   margin-top: 0.75rem;
   padding: 0.75rem 1.25rem;
-  border-radius: 9999px;
-  background-color: #1c3461;
-  color: #fff;
-  font-size: 1rem;
+  border-radius: $radius-full;
+  background-color: $color-navy;
+  color: $color-white;
+  font-size: $fs-base;
   font-weight: 500;
   text-align: center;
   text-decoration: none;
-  transition: background-color 0.2s;
+  transition: background-color $t-base;
 
   &:hover {
-    background-color: #0f1e3d;
+    background-color: $color-navy-dark;
   }
 }

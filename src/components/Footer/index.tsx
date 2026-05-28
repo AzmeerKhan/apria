@@ -22,7 +22,7 @@ export default function Footer() {
         <div className={styles.grid}>
           <div className={styles.brand}>
             <Link href={ROUTES.HOME} className={styles.logoRow}>
-              <Image src="/apria-logo.svg" alt="APRIA" width={32} height={32} className="brightness-0 invert" />
+              <Image src="/apria-logo.svg" alt="APRIA" width={32} height={32} className={styles.logoImg} />
               <span className={styles.logoText}>APRIA</span>
             </Link>
             <p className={styles.tagline}>{en.footer.tagline}</p>

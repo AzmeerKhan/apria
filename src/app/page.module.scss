@@ -1,0 +1,160 @@
+@use '../styles/variables' as *;
+
+// ─── Services section ─────────────────────────────────────────────────────────
+
+.services {
+  padding: 2.5rem $px-section;
+}
+
+.container {
+  @include container;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.sectionTitle {
+  font-size: $fs-3xl;
+  font-weight: 700;
+  color: $color-navy;
+  margin-bottom: 0.75rem;
+}
+
+.sectionSub {
+  color: $color-gray-500;
+  max-width: 36rem;
+  margin: 0 auto;
+  line-height: 1.65;
+}
+
+.servicesGrid {
+  display: grid;
+  gap: 1.5rem;
+
+  @include sm {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include lg {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+// ─── Credentials section ──────────────────────────────────────────────────────
+
+.credentials {
+  background: $color-slate;
+  padding: 5rem $px-section;
+}
+
+.credGrid {
+  display: grid;
+  gap: 1.25rem;
+
+  @include sm {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include lg {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.credCard {
+  background: $color-white;
+  border-radius: $radius-2xl;
+  padding: 1.5rem;
+  border: 1px solid $color-gray-100;
+  box-shadow: $shadow-sm;
+  text-align: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow $t-base, transform $t-base;
+
+  &:hover {
+    box-shadow: $shadow-md;
+    transform: scale(1.02);
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+.credLabel {
+  font-size: $fs-2xl;
+  font-weight: 800;
+  color: $color-navy;
+  margin-bottom: 0.5rem;
+}
+
+.credDetail {
+  font-size: $fs-xs;
+  color: $color-gray-500;
+  line-height: 1.65;
+  flex: 1;
+}
+
+// ─── CTA section ─────────────────────────────────────────────────────────────
+
+.cta {
+  background: $color-navy;
+  padding: 5rem $px-section;
+  position: relative;
+  overflow: hidden;
+}
+
+.ctaGradient {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 70% 50%, rgba(40, 152, 184, 0.15), transparent 60%);
+  pointer-events: none;
+}
+
+.ctaContent {
+  position: relative;
+  max-width: 48rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.ctaTitle {
+  font-size: $fs-3xl;
+  font-weight: 700;
+  color: $color-white;
+  margin-bottom: 1rem;
+}
+
+.ctaBody {
+  color: $color-on-dark;
+  margin-bottom: 2rem;
+  line-height: 1.65;
+  max-width: 42rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ctaBtn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  border-radius: $radius-full;
+  background: $color-white;
+  color: $color-navy;
+  font-weight: 600;
+  font-size: $fs-sm;
+  text-decoration: none;
+  box-shadow: $shadow-lg;
+  transition: background $t-base, transform $t-base;
+
+  &:hover {
+    background: $color-teal-light;
+    transform: scale(1.05);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}

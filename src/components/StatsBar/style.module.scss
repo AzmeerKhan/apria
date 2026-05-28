@@ -1,0 +1,155 @@
+@use '../../styles/variables' as *;
+
+.section {
+  background: $color-navy;
+  overflow: hidden;
+  padding: 2rem $px-section;
+
+  @include md {
+    padding: 0;
+  }
+}
+
+// ─── Desktop layout ───────────────────────────────────────────────────────────
+
+.desktop {
+  display: none;
+
+  @include md {
+    display: grid;
+    max-width: $max-width;
+    margin: 0 auto;
+    padding: 0 $px-nav;
+    grid-template-columns: 1fr 5rem 1fr;
+  }
+}
+
+.statsCol {
+  display: flex;
+  gap: 3rem;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 3rem 2rem 0;
+
+  @include lg {
+    gap: 5.5rem;
+    padding-right: 5.5rem;
+  }
+}
+
+.statItem { text-align: center; }
+
+.statCount {
+  font-size: $fs-3xl;
+  font-weight: 800;
+  color: $color-white;
+
+  @include lg {
+    font-size: $fs-4xl;
+  }
+}
+
+.statLabel {
+  font-size: $fs-xs;
+  color: $color-on-dark;
+  margin-top: 0.5rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+
+  @include lg {
+    font-size: $fs-sm;
+  }
+}
+
+.dividerSvg {
+  width: 100%;
+  height: 100%;
+  min-height: 80px;
+}
+
+.logosCol {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  padding: 2rem 0 2rem 3rem;
+
+  @include lg {
+    gap: 5.5rem;
+    padding-left: 5.5rem;
+  }
+}
+
+.logoImg {
+  object-fit: contain;
+  opacity: 0.9;
+  height: 80px;
+  width: auto;
+
+  @include lg {
+    height: 100px;
+  }
+}
+
+// ─── Mobile layout ────────────────────────────────────────────────────────────
+
+.mobile {
+  max-width: 36rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  @include md {
+    display: none;
+  }
+}
+
+.statsMobile {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.statCountMobile {
+  font-size: $fs-2xl;
+  font-weight: 800;
+  color: $color-white;
+
+  @include sm {
+    font-size: $fs-3xl;
+  }
+}
+
+.statLabelMobile {
+  font-size: $fs-xs;
+  color: $color-on-dark;
+  margin-top: 0.25rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.dividerMobile {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.25);
+  width: 100%;
+  max-width: 200px;
+  margin: 0 auto;
+}
+
+.logosMobile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.logoImgMobile {
+  object-fit: contain;
+  opacity: 0.9;
+  width: auto;
+  height: 60px;
+}

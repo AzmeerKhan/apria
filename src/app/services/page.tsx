@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ROUTES } from "@/constants/routes";
 import { SERVICE_CATEGORIES } from "@/constants/services";
 import en from "@/i18n/messages/en.json";
+import styles from "./page.module.scss";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -47,59 +48,52 @@ const icons: Record<string, React.ReactNode> = {
 export default function ServicesPage() {
   return (
     <>
-      <section className="bg-slate py-16 px-4 border-b border-gray-100">
-        <div className="max-w-7xl mx-auto">
-          <p className="text-teal text-sm font-semibold tracking-wider uppercase mb-3">{en.services.badge}</p>
-          <h1 className="text-4xl font-bold text-navy mb-4">{en.services.heading}</h1>
-          <p className="text-gray-500 max-w-xl leading-relaxed">{en.services.subheading}</p>
+      <section className={styles.hero}>
+        <div className={styles.container}>
+          <p className={styles.badge}>{en.services.badge}</p>
+          <h1 className={styles.heroTitle}>{en.services.heading}</h1>
+          <p className={styles.heroSub}>{en.services.subheading}</p>
         </div>
       </section>
 
       {SERVICE_CATEGORIES.map(({ id, serviceIds }) => (
-        <section key={id} className="py-14 px-4 even:bg-slate">
-          <div className="max-w-7xl mx-auto">
-            <div className="flex items-center gap-3 mb-8">
-              <span className="px-3 py-1 rounded-full bg-navy text-white text-xs font-semibold tracking-wide uppercase">
-                {en.services.categories[id]}
-              </span>
-              <div className="flex-1 h-px bg-gray-200" />
-            </div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {serviceIds.map((svcId) => {
-                const svc = en.services[svcId as keyof typeof en.services] as SvcData;
-                return (
-                  <div key={svcId} className="bg-white rounded-2xl border border-gray-100 p-7 shadow-sm hover:shadow-md hover:scale-[1.02] active:scale-[0.98] transition-transform duration-200 flex flex-col">
-                    <div className="w-12 h-12 rounded-xl bg-teal-light text-teal flex items-center justify-center mb-5 shrink-0">
-                      {icons[svcId]}
-                    </div>
-                    <h2 className="text-lg font-bold text-navy mb-2">{svc.title}</h2>
-                    <p className="text-gray-500 text-sm mb-5 leading-relaxed">{svc.summary}</p>
-                    <ul className="space-y-2 mt-auto">
-                      {svc.points.map((point) => (
-                        <li key={point} className="flex items-start gap-2.5 text-sm text-gray-600">
-                          <svg className="w-4 h-4 text-green shrink-0 mt-0.5" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                          </svg>
-                          {point}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                );
-              })}
-            </div>
+        <section key={id} className={styles.serviceSection}>
+          <div className={styles.categoryHeader}>
+            <span className={styles.categoryBadge}>
+              {en.services.categories[id]}
+            </span>
+            <div className={styles.categoryDivider} />
+          </div>
+          <div className={styles.servicesGrid}>
+            {serviceIds.map((svcId) => {
+              const svc = en.services[svcId as keyof typeof en.services] as SvcData;
+              return (
+                <div key={svcId} className={styles.serviceCard}>
+                  <div className={styles.serviceIconWrap}>{icons[svcId]}</div>
+                  <h2 className={styles.serviceTitle}>{svc.title}</h2>
+                  <p className={styles.serviceSummary}>{svc.summary}</p>
+                  <ul className={styles.servicePoints}>
+                    {svc.points.map((point) => (
+                      <li key={point} className={styles.servicePoint}>
+                        <svg className={styles.checkIcon} fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                        </svg>
+                        {point}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              );
+            })}
           </div>
         </section>
       ))}
 
-      <section className="bg-navy py-16 px-4">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-2xl font-bold text-white mb-3">{en.services.cta.heading}</h2>
-          <p className="text-blue-200 mb-7 leading-relaxed">{en.services.cta.body}</p>
-          <Link
-            href={ROUTES.CONTACT}
-            className="inline-block px-8 py-3.5 rounded-full bg-white text-navy font-semibold text-sm hover:bg-blue-50 hover:scale-105 active:scale-95 transition-transform duration-200 shadow-lg"
-          >
+      <section className={styles.cta}>
+        <div className={styles.ctaContent}>
+          <h2 className={styles.ctaTitle}>{en.services.cta.heading}</h2>
+          <p className={styles.ctaBody}>{en.services.cta.body}</p>
+          <Link href={ROUTES.CONTACT} className={styles.ctaBtn}>
             {en.services.cta.button}
           </Link>
         </div>

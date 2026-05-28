@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import bgImage from "@/assets/images/background.png";
 import { ROUTES } from "@/constants/routes";
 import en from "@/i18n/messages/en.json";
+import styles from "./style.module.scss";
 
 const credentials = ["ACCA", "MAAT", "AAT", "ICAEW"] as const;
 
@@ -45,39 +46,33 @@ const serviceStagger = {
 
 export default function HeroBanner() {
   return (
-    <section className="relative min-h-[600px] flex items-center overflow-hidden">
+    <section className={styles.section}>
       <Image
         src={bgImage}
         alt=""
         fill
-        className="object-cover object-center"
+        className={styles.bgImage}
         priority
       />
-      <div className="absolute inset-0 bg-black/65" aria-hidden="true" />
+      <div className={styles.overlay} aria-hidden="true" />
 
-      <div className="relative z-10 w-full max-w-[80rem] mx-auto px-6 py-16 sm:py-20">
-        <div className="grid lg:grid-cols-[3fr_2fr] gap-8 lg:gap-12 items-center">
-          {/* Left */}
+      <div className={styles.inner}>
+        <div className={styles.grid}>
           <motion.div variants={stagger} initial="hidden" animate="show">
             <motion.div
               variants={fadeLeft}
               transition={{ duration: 0.7, ease: "easeOut" }}
-              className="flex flex-wrap gap-2 mb-6"
+              className={styles.credentialRow}
             >
               {credentials.map((c) => (
-                <span
-                  key={c}
-                  className="px-3 py-1 rounded-full text-xs font-semibold bg-white/15 text-white border border-white/25 backdrop-blur-sm"
-                >
-                  {c}
-                </span>
+                <span key={c} className={styles.credBadge}>{c}</span>
               ))}
             </motion.div>
 
             <motion.h1
               variants={fadeLeft}
               transition={{ duration: 0.55, ease: "easeOut" }}
-              className="text-4xl sm:text-5xl font-extrabold text-white leading-tight mb-4"
+              className={styles.heading}
             >
               Accounting Services
               <br /> in the UK
@@ -86,59 +81,48 @@ export default function HeroBanner() {
             <motion.p
               variants={fadeLeft}
               transition={{ duration: 0.55, ease: "easeOut" }}
-              className="text-blue-100 text-lg mb-8 leading-relaxed max-w-md"
+              className={styles.desc}
             >
               Professional tax compliance, VAT returns, and financial
               reporting for limited companies and the self-employed.
             </motion.p>
 
-            {/* Desktop button */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{
-                duration: 0.45,
-                delay: 1.2,
-                ease: "easeIn",
-              }}
-              className="hidden lg:block"
+              transition={{ duration: 0.45, delay: 1.2, ease: "easeIn" }}
+              className={styles.ctaDesktop}
             >
-              <Link
-                href={ROUTES.CONTACT}
-                className="inline-block px-8 py-4 rounded-full bg-teal text-white font-semibold text-md shadow-lg shadow-black/20 hover:brightness-110 hover:scale-105 active:scale-95 transition-all duration-200"
-              >
+              <Link href={ROUTES.CONTACT} className={styles.ctaBtn}>
                 Book Appointment
               </Link>
             </motion.div>
           </motion.div>
 
-          {/* Right — services card */}
           <motion.div
             variants={fadeRight}
             initial="hidden"
             animate="show"
             transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
-            className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 sm:p-8"
+            className={styles.servicesCard}
           >
-            <p className="text-sm font-semibold uppercase tracking-widest text-blue-200 mb-5">
-              Our Services
-            </p>
+            <p className={styles.servicesLabel}>Our Services</p>
 
             <motion.ul
               variants={serviceStagger}
               initial="hidden"
               animate="show"
-              className="space-y-3"
+              className={styles.servicesList}
             >
               {services.map((name) => (
                 <motion.li
                   key={name}
                   variants={fadeUp}
                   transition={{ duration: 0.35, ease: "easeOut" }}
-                  className="flex items-center gap-3 text-white"
+                  className={styles.serviceItem}
                 >
                   <svg
-                    className="shrink-0 text-teal"
+                    className={styles.checkIcon}
                     width="18"
                     height="18"
                     viewBox="0 0 24 24"
@@ -153,27 +137,19 @@ export default function HeroBanner() {
                       d="M4.5 12.75l6 6 9-13.5"
                     />
                   </svg>
-                  <span className="text-base font-medium">{name}</span>
+                  <span className={styles.serviceName}>{name}</span>
                 </motion.li>
               ))}
             </motion.ul>
           </motion.div>
 
-          {/* Mobile button - appears below services */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{
-              duration: 0.45,
-              delay: 1.2,
-              ease: "easeIn",
-            }}
-            className="lg:hidden text-center"
+            transition={{ duration: 0.45, delay: 1.2, ease: "easeIn" }}
+            className={styles.ctaMobile}
           >
-            <Link
-              href={ROUTES.CONTACT}
-              className="inline-block px-8 py-4 rounded-full bg-teal text-white font-semibold text-md shadow-lg shadow-black/20 hover:brightness-110 active:scale-95 transition-all duration-200"
-            >
+            <Link href={ROUTES.CONTACT} className={styles.ctaBtn}>
               Book Appointment
             </Link>
           </motion.div>

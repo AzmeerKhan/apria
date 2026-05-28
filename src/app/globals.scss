@@ -1,16 +1,4 @@
-@import "tailwindcss";
-
-@theme {
-  --color-navy: #1c3461;
-  --color-navy-dark: #0f1e3d;
-  --color-teal-dark: #1a607a;
-  --color-teal: #2898b8;
-  --color-teal-light: #e0f2fb;
-  --color-green: #28804a;
-  --color-green-light: #dcf5e7;
-  --color-slate: #f8fafc;
-  --font-sans: var(--font-inter);
-}
+@use '../styles/variables' as *;
 
 *,
 *::before,
@@ -19,15 +7,27 @@
 }
 
 html {
+  height: 100%;
   scroll-behavior: smooth;
 }
 
 body {
-  background: #ffffff;
-  color: #374151;
-  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: $color-white;
+  color: $color-gray-700;
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
+main {
+  flex: 1;
+}
+
+// ─── Keyframes ────────────────────────────────────────────────────────────────
+// Shared animation names referenced by component modules
 
 @keyframes fadeInUp {
   from {

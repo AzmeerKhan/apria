@@ -1,16 +1,18 @@
+@use '../../styles/variables' as *;
+
 .card {
   padding: 1.75rem;
-  border-radius: 1.25rem;
-  border: 1px solid #f3f4f6;
-  background: #fff;
-  transition: border-color 0.25s, box-shadow 0.25s, transform 0.2s ease;
+  border-radius: $radius-xl;
+  border: 1px solid $color-gray-100;
+  background: $color-white;
+  transition: border-color $t-slow, box-shadow $t-slow, transform $t-base;
   cursor: default;
   height: 100%;
   display: flex;
   flex-direction: column;
 
   &:hover {
-    border-color: #2898b8;
+    border-color: $color-teal;
     box-shadow: 0 8px 24px rgba(40, 152, 184, 0.1);
     transform: scale(1.02);
   }
@@ -23,31 +25,31 @@
 .iconWrap {
   width: 3rem;
   height: 3rem;
-  border-radius: 0.875rem;
-  background: #e0f2fb;
-  color: #2898b8;
+  border-radius: $radius-lg;
+  background: $color-teal-light;
+  color: $color-teal;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 1.25rem;
-  transition: background 0.25s, color 0.25s;
+  transition: background $t-slow, color $t-slow;
 
   .card:hover & {
-    background: #2898b8;
-    color: #fff;
+    background: $color-teal;
+    color: $color-white;
   }
 }
 
 .title {
-  font-size: 1.0625rem;
+  font-size: $fs-md;
   font-weight: 600;
-  color: #1c3461;
+  color: $color-navy;
   margin-bottom: 0.5rem;
 }
 
 .desc {
-  font-size: 0.875rem;
-  color: #6b7280;
+  font-size: $fs-sm;
+  color: $color-gray-500;
   line-height: 1.65;
   flex: 1;
 }
