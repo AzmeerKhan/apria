@@ -1,4 +1,4 @@
-@use '../../styles/variables' as *;
+@use "../../styles/variables" as *;
 
 .header {
   position: sticky;
@@ -86,20 +86,33 @@
   }
 }
 
-.ctaBtn {
-  margin-left: 0.5rem;
-  padding: 0.5rem 1.25rem;
+.contactIcons {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  // margin-left: 0.5rem;
+  padding-left: 1.5em;
+  border-left: 1px solid $color-gray-200;
+}
+
+.iconLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
   border-radius: $radius-full;
-  background-color: $color-navy;
-  color: $color-white;
-  font-size: $fs-base;
-  font-weight: 500;
-  text-decoration: none;
-  transition: background-color $t-base, transform $t-base;
+  color: $color-gray-600;
+  background: $color-slate;
+  transition:
+    color $t-base,
+    background $t-base,
+    transform $t-base;
 
   &:hover {
-    background-color: $color-navy-dark;
-    transform: scale(1.05);
+    color: $color-white;
+    background: $color-teal;
+    transform: scale(1.1);
   }
 
   &:active {
@@ -117,7 +130,9 @@
   cursor: pointer;
   color: $color-gray-600;
   border-radius: $radius-sm;
-  transition: color $t-base, background $t-base;
+  transition:
+    color $t-base,
+    background $t-base;
 
   &:hover {
     color: $color-navy;
@@ -134,7 +149,6 @@
   inset: 0;
   background: rgba(0, 0, 0, 0.45);
   z-index: 99;
-  animation: fadeIn 0.2s ease-out both;
 
   @include md {
     display: none;
@@ -152,7 +166,6 @@
   display: flex;
   flex-direction: column;
   box-shadow: -4px 0 24px rgba(0, 0, 0, 0.12);
-  animation: slideInRight 0.25s ease-out both;
 
   @include md {
     display: none;
@@ -163,7 +176,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 1.25rem;
+  padding: 1rem 2rem 1rem 1.25rem;
   border-bottom: 1px solid $color-gray-100;
 }
 
@@ -178,7 +191,9 @@
   background: none;
   color: $color-gray-500;
   cursor: pointer;
-  transition: color $t-base, background $t-base;
+  transition:
+    color $t-base,
+    background $t-base;
 
   &:hover {
     color: $color-navy;
@@ -200,7 +215,10 @@
   color: $color-gray-700;
   text-decoration: none;
   border-left: 3px solid transparent;
-  transition: color $t-base, background $t-base, border-color $t-base;
+  transition:
+    color $t-base,
+    background $t-base,
+    border-color $t-base;
 
   &:hover {
     color: $color-navy;
@@ -243,6 +261,9 @@
   display: flex;
   flex-direction: column;
   gap: 0.625rem;
+  padding: 1rem 1.5rem;
+  margin-top: 0.5rem;
+  border-top: 1px solid $color-gray-100;
 }
 
 .drawerContact {
