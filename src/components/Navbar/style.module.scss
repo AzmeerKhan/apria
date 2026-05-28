@@ -1,13 +1,70 @@
 @use "../../styles/variables" as *;
 
 .header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 50;
+  transition:
+    background $t-slow,
+    border-color $t-slow,
+    box-shadow $t-slow;
+}
+
+.glass {
+  background: rgba(15, 30, 61, 0.65);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+  .logoText {
+    color: $color-white;
+  }
+
+  .link {
+    color: rgba(255, 255, 255, 0.8);
+    &:hover {
+      color: $color-white;
+    }
+    &::after {
+      background: $color-teal;
+    }
+  }
+
+  .linkActive {
+    color: $color-teal;
+  }
+
+  .iconLink {
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.8);
+    &:hover {
+      background: $color-teal;
+      color: $color-white;
+    }
+  }
+
+  .contactIcons {
+    border-left-color: rgba(255, 255, 255, 0.15);
+  }
+
+  .hamburger {
+    color: $color-white;
+    &:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+  }
+
+  img {
+    filter: brightness(0) invert(1);
+  }
+}
+
+.scrolled {
   background: $color-white;
   border-bottom: 1px solid $color-gray-100;
   box-shadow: $shadow-sm;
-  transition: box-shadow $t-base;
 }
 
 .nav {

@@ -15,6 +15,15 @@ export default function Navbar() {
   const pathname = usePathname();
   const t = useTranslations("nav");
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () =>
+      setScrolled(window.scrollY > window.innerHeight * 0.7);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -26,7 +35,12 @@ export default function Navbar() {
   const close = () => setOpen(false);
 
   return (
-    <header className={styles.header}>
+    <header
+      className={clsx(
+        styles.header,
+        scrolled ? styles.scrolled : styles.glass,
+      )}
+    >
       <nav className={styles.nav}>
         <Link href={ROUTES.HOME} className={styles.logo} onClick={close}>
           <Image

@@ -1,7 +1,7 @@
 import StaggerGrid from "@/components/StaggerGrid";
 import FadeIn from "@/components/FadeIn";
 import en from "@/i18n/messages/en.json";
-import styles from "../page.module.scss";
+import styles from "./style.module.scss";
 
 const credentialCards = [
   { label: "ACCA",  detail: en.home.credentials.acca  },

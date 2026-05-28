@@ -1,8 +1,8 @@
 import HeroBanner from "@/components/HeroBanner";
 import StatsBar from "@/components/StatsBar";
-import ServicesSection from "./_sections/ServicesSection";
-import CredentialsSection from "./_sections/CredentialsSection";
-import CtaSection from "./_sections/CtaSection";
+import ServicesSection from "@/components/home/ServicesSection";
+import CredentialsSection from "@/components/home/CredentialsSection";
+import CtaSection from "@/components/home/CtaSection";
 
 export default function HomePage() {
   return (

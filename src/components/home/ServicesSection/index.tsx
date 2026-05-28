@@ -1,9 +1,8 @@
-import { Fragment } from "react";
 import ServiceCard from "@/components/ServiceCard";
 import FadeIn from "@/components/FadeIn";
 import { SERVICE_CATEGORIES, type ServiceId } from "@/constants/services";
 import en from "@/i18n/messages/en.json";
-import styles from "../page.module.scss";
+import styles from "./style.module.scss";
 
 const serviceIcons: Record<ServiceId, React.ReactNode> = {
   annualAccounts: (
@@ -43,33 +42,39 @@ const [lc, se] = SERVICE_CATEGORIES;
 export default function ServicesSection() {
   return (
     <section className={styles.services}>
+      <div className={styles.splitBg} aria-hidden="true">
+        <div className={styles.leftBg} />
+        <div className={styles.rightBg} />
+      </div>
+
       <div className={styles.container}>
         <FadeIn className={styles.sectionHeader}>
           <h2 className={styles.sectionTitle}>{en.home.services.heading}</h2>
           <p className={styles.sectionSub}>{en.home.services.subheading}</p>
         </FadeIn>
 
-        <div className={styles.categoriesGrid}>
-          <FadeIn direction="left" className={styles.headerCell}>
-            <span className={styles.columnLabel}>{en.services.categories[lc.id]}</span>
-          </FadeIn>
-          <FadeIn direction="right" className={styles.headerCell}>
-            <span className={styles.columnLabel}>{en.services.categories[se.id]}</span>
-          </FadeIn>
+        <div className={styles.panels}>
+          <div className={styles.leftPanel}>
+            <FadeIn direction="left" className={styles.headerCell}>
+              <span className={styles.columnLabel}>{en.services.categories[lc.id]}</span>
+            </FadeIn>
+            {lc.serviceIds.map((id, i) => (
+              <FadeIn key={id} direction="left" delay={0.05 + i * 0.08} className={styles.cardWrapper}>
+                <ServiceCard dark icon={serviceIcons[id]} title={en.services[id].title} desc={en.services[id].summary} />
+              </FadeIn>
+            ))}
+          </div>
 
-          {lc.serviceIds.map((lcId, i) => {
-            const seId = se.serviceIds[i];
-            return (
-              <Fragment key={lcId}>
-                <FadeIn direction="left" delay={0.1 + i * 0.1} className={styles.cardWrapper}>
-                  <ServiceCard icon={serviceIcons[lcId]} title={en.services[lcId].title} desc={en.services[lcId].summary} />
-                </FadeIn>
-                <FadeIn direction="right" delay={0.1 + i * 0.1} className={styles.cardWrapper}>
-                  <ServiceCard icon={serviceIcons[seId]} title={en.services[seId].title} desc={en.services[seId].summary} />
-                </FadeIn>
-              </Fragment>
-            );
-          })}
+          <div className={styles.rightPanel}>
+            <FadeIn direction="right" className={styles.headerCell}>
+              <span className={styles.columnLabel}>{en.services.categories[se.id]}</span>
+            </FadeIn>
+            {se.serviceIds.map((id, i) => (
+              <FadeIn key={id} direction="right" delay={0.05 + i * 0.08} className={styles.cardWrapper}>
+                <ServiceCard dark icon={serviceIcons[id]} title={en.services[id].title} desc={en.services[id].summary} />
+              </FadeIn>
+            ))}
+          </div>
         </div>
       </div>
     </section>

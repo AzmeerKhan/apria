@@ -1,0 +1,123 @@
+@use "../../../styles/variables" as *;
+
+.services {
+  position: relative;
+  overflow: hidden;
+  background: $color-navy;
+}
+
+// Both bg divs are absolute + full-width so clip-path % values are
+// relative to the same reference box — no gap/overlap math needed.
+.splitBg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: none;
+
+  @include md {
+    display: block;
+  }
+}
+
+.leftBg {
+  position: absolute;
+  inset: 0;
+  background: $color-navy;
+  clip-path: polygon(0 0, calc(50% + 6rem) 0, calc(50% - 6rem) 100%, 0 100%);
+}
+
+.rightBg {
+  position: absolute;
+  inset: 0;
+  background: $color-navy-dark;
+  clip-path: polygon(calc(50% + 6rem) 0, 100% 0, 100% 100%, calc(50% - 6rem) 100%);
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 3.2rem $px-section 7.2rem;
+
+  @include md {
+    padding: 4rem $px-section 9.6rem;
+  }
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 5.6rem;
+}
+
+.sectionTitle {
+  font-size: $fs-3xl;
+  font-weight: 800;
+  color: $color-white;
+  margin-bottom: 1.2rem;
+  letter-spacing: -0.02em;
+
+  @include md {
+    font-size: $fs-4xl;
+  }
+}
+
+.sectionSub {
+  color: $color-on-dark;
+  font-size: $fs-lg;
+  max-width: 64rem;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.panels {
+  display: flex;
+  flex-direction: column;
+  gap: 4.8rem;
+
+  @include md {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 0;
+  }
+}
+
+.leftPanel {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+
+  @include md {
+    flex: 1;
+    padding-right: 8rem;
+  }
+}
+
+.rightPanel {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+
+  @include md {
+    flex: 1;
+    padding-left: 8rem;
+    margin-top: 10rem;
+  }
+}
+
+.headerCell {
+  margin-bottom: 0.4rem;
+}
+
+.columnLabel {
+  font-size: $fs-lg;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: $color-white;
+}
+
+.cardWrapper {
+  display: flex;
+  flex-direction: column;
+}

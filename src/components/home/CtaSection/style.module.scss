@@ -1,0 +1,96 @@
+@use "../../../styles/variables" as *;
+
+.cta {
+  background: $color-navy;
+  padding: 4.8rem $px-section;
+  position: relative;
+  overflow: hidden;
+
+  @include md {
+    padding: 6rem $px-section;
+  }
+}
+
+.ctaGradient {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 70% 50%,
+    rgba(40, 152, 184, 0.15),
+    transparent 60%
+  );
+  pointer-events: none;
+}
+
+.ctaContent {
+  position: relative;
+  max-width: 76.8rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.ctaTitle {
+  font-size: $fs-2xl;
+  font-weight: 700;
+  color: $color-white;
+  margin-bottom: 1.6rem;
+
+  @include md {
+    font-size: $fs-3xl;
+  }
+}
+
+.ctaBody {
+  color: $color-on-dark;
+  margin-bottom: 3.2rem;
+  line-height: 1.65;
+  max-width: 67.2rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ctaContacts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2.4rem;
+  margin-top: 3.2rem;
+}
+
+.ctaContact {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: $color-on-dark;
+  font-size: $fs-sm;
+  text-decoration: none;
+  transition: color $t-base;
+
+  &:hover {
+    color: $color-white;
+  }
+}
+
+.ctaBtn {
+  display: inline-block;
+  padding: 1.6rem 3.2rem;
+  border-radius: $radius-full;
+  background: $color-white;
+  color: $color-navy;
+  font-weight: 600;
+  font-size: $fs-sm;
+  text-decoration: none;
+  box-shadow: $shadow-lg;
+  transition:
+    background $t-base,
+    transform $t-base;
+
+  &:hover {
+    background: $color-teal-light;
+    transform: scale(1.05);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}

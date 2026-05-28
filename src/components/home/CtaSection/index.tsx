@@ -2,7 +2,7 @@ import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
 import { ROUTES } from "@/constants/routes";
 import en from "@/i18n/messages/en.json";
-import styles from "../page.module.scss";
+import styles from "./style.module.scss";
 
 export default function CtaSection() {
   return (

@@ -49,16 +49,26 @@ export default function StatsBar() {
 
   return (
     <section ref={ref} className={styles.section}>
+      <div className={styles.splitBg} aria-hidden="true">
+        <div className={styles.leftBg} />
+        <div className={styles.rightBg} />
+      </div>
+
       <div className={styles.inner}>
         <motion.div
           className={styles.stats}
-          initial={{ opacity: 0, x: -60 }}
+          initial={{ opacity: 0, x: -260 }}
           animate={inView ? { opacity: 1, x: 0 } : {}}
-          transition={{ duration: 0.6, ease: "easeOut" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <div className={styles.stat}>
             <div className={styles.count}>
-              <AnimatedCount to={5} suffix="+" inView={inView} duration={0.5} />
+              <AnimatedCount
+                to={5}
+                suffix="+"
+                inView={inView}
+                duration={0.5}
+              />
             </div>
             <div className={styles.label}>Years Experience</div>
           </div>
@@ -71,32 +81,23 @@ export default function StatsBar() {
         </motion.div>
 
         <motion.div
-          className={styles.divider}
-          initial={{ opacity: 0 }}
-          animate={inView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.4, delay: 0.35 }}
-          aria-hidden="true"
-        >
-          <svg className={styles.dividerSvg} preserveAspectRatio="none">
-            <line
-              x1="100%"
-              y1="-15%"
-              x2="0%"
-              y2="115%"
-              stroke="rgba(255,255,255,0.25)"
-              strokeWidth="12"
-            />
-          </svg>
-        </motion.div>
-
-        <motion.div
           className={styles.logos}
-          initial={{ opacity: 0, x: 60 }}
+          initial={{ opacity: 0, x: 260 }}
           animate={inView ? { opacity: 1, x: 0 } : {}}
-          transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <Image src={accaLogo} alt="ACCA" height={80} className={styles.logo} />
-          <Image src={aatLogo} alt="AAT" height={80} className={styles.logo} />
+          <Image
+            src={accaLogo}
+            alt="ACCA"
+            height={80}
+            className={styles.logo}
+          />
+          <Image
+            src={aatLogo}
+            alt="AAT"
+            height={80}
+            className={styles.logo}
+          />
         </motion.div>
       </div>
     </section>

@@ -1,4 +1,4 @@
-@use '../../styles/variables' as *;
+@use "../../styles/variables" as *;
 
 .card {
   display: flex;
@@ -16,13 +16,16 @@
   border: 1px solid $color-gray-100;
   background: $color-white;
   box-shadow: $shadow-sm;
-  transition: transform $t-slow, box-shadow $t-slow, border-color $t-slow;
+  transition:
+    transform $t-slow,
+    box-shadow $t-slow,
+    border-color $t-slow;
   cursor: default;
   position: relative;
   overflow: hidden;
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     left: 0;
     top: 0;
@@ -68,7 +71,7 @@
 }
 
 .title {
-  font-size: $fs-base;
+  font-size: $fs-md;
   font-weight: 700;
   color: $color-navy;
   margin-bottom: 0.4rem;
@@ -76,7 +79,27 @@
 }
 
 .desc {
-  font-size: $fs-xs;
+  font-size: $fs-sm;
   color: $color-gray-500;
   line-height: 1.65;
+}
+
+.cardDark {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: none;
+
+  .title {
+    color: $color-white;
+  }
+
+  .desc {
+    color: $color-on-dark;
+  }
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.12);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    border-color: rgba(40, 152, 184, 0.5);
+  }
 }
