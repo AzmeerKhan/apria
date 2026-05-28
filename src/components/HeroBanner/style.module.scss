@@ -27,6 +27,7 @@
   max-width: $max-width;
   margin: 0 auto;
   padding: 3.2rem $px-nav;
+  padding-top: 8rem;
 
   @include sm {
     padding-top: 8rem;
