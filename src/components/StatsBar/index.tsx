@@ -58,7 +58,12 @@ export default function StatsBar() {
         >
           <div className={styles.statItem}>
             <div className={styles.statCount}>
-              <AnimatedCount to={5} suffix="+" inView={inView} duration={0.5} />
+              <AnimatedCount
+                to={5}
+                suffix="+"
+                inView={inView}
+                duration={0.5}
+              />
             </div>
             <div className={styles.statLabel}>Years Experience</div>
           </div>
@@ -78,11 +83,11 @@ export default function StatsBar() {
         >
           <line
             x1="100%"
-            y1="-10%"
+            y1="-15%"
             x2="0%"
-            y2="110%"
+            y2="115%"
             stroke="rgba(255,255,255,0.25)"
-            strokeWidth="7"
+            strokeWidth="12"
           />
         </motion.svg>
 
@@ -92,8 +97,18 @@ export default function StatsBar() {
           animate={inView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
         >
-          <Image src={accaLogo} alt="ACCA" height={80} className={styles.logoImg} />
-          <Image src={aatLogo} alt="AAT" height={80} className={styles.logoImg} />
+          <Image
+            src={accaLogo}
+            alt="ACCA"
+            height={80}
+            className={styles.logoImg}
+          />
+          <Image
+            src={aatLogo}
+            alt="AAT"
+            height={80}
+            className={styles.logoImg}
+          />
         </motion.div>
       </div>
 
@@ -106,9 +121,16 @@ export default function StatsBar() {
         >
           <div className={styles.statItem}>
             <div className={styles.statCountMobile}>
-              <AnimatedCount to={5} suffix="+" inView={inView} duration={0.5} />
+              <AnimatedCount
+                to={5}
+                suffix="+"
+                inView={inView}
+                duration={0.5}
+              />
             </div>
-            <div className={styles.statLabelMobile}>Years Experience</div>
+            <div className={styles.statLabelMobile}>
+              Years Experience
+            </div>
           </div>
           <div className={styles.statItem}>
             <div className={styles.statCountMobile}>
@@ -131,8 +153,18 @@ export default function StatsBar() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
         >
-          <Image src={accaLogo} alt="ACCA" height={60} className={styles.logoImgMobile} />
-          <Image src={aatLogo} alt="AAT" height={60} className={styles.logoImgMobile} />
+          <Image
+            src={accaLogo}
+            alt="ACCA"
+            height={60}
+            className={styles.logoImgMobile}
+          />
+          <Image
+            src={aatLogo}
+            alt="AAT"
+            height={60}
+            className={styles.logoImgMobile}
+          />
         </motion.div>
       </div>
     </section>
