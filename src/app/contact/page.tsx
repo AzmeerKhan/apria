@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ContactTabs from "@/components/ContactTabs";
+import FadeIn from "@/components/FadeIn";
 import en from "@/i18n/messages/en.json";
 import styles from "./page.module.scss";
 
@@ -52,52 +53,60 @@ export default async function ContactPage({
     <>
       <section className={styles.hero}>
         <div className={styles.container}>
-          <p className={styles.badge}>{en.contact.badge}</p>
-          <h1 className={styles.heroTitle}>{en.contact.heading}</h1>
-          <p className={styles.heroSub}>{en.contact.subheading}</p>
+          <FadeIn>
+            <p className={styles.badge}>{en.contact.badge}</p>
+            <h1 className={styles.heroTitle}>{en.contact.heading}</h1>
+            <p className={styles.heroSub}>{en.contact.subheading}</p>
+          </FadeIn>
         </div>
       </section>
 
       <section className={styles.main}>
         <div className={styles.layout}>
-          <div className={styles.formCard}>
+          <FadeIn direction="left" className={styles.formCard}>
             <h2 className={styles.formTitle}>{en.contact.form.heading}</h2>
             <ContactTabs defaultService={service} defaultTab={tab === "booking" ? "booking" : undefined} />
-          </div>
+          </FadeIn>
 
           <div className={styles.sidebar}>
-            <div className={styles.contactCard}>
-              <h2 className={styles.contactTitle}>{en.contact.info.heading}</h2>
-              <ul className={styles.contactList}>
-                {contactDetails.map(({ icon, label, value, href }) => (
-                  <li key={label} className={styles.contactItem}>
-                    <div className={styles.contactIcon}>{icon}</div>
-                    <div>
-                      <p className={styles.contactLabel}>{label}</p>
-                      {href ? (
-                        <a href={href} className={styles.contactLink}>{value}</a>
-                      ) : (
-                        <p className={styles.contactValue}>{value}</p>
-                      )}
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className={styles.consultCard}>
-              <h3 className={styles.consultTitle}>{en.contact.info.freeConsultation.heading}</h3>
-              <p className={styles.consultBody}>{en.contact.info.freeConsultation.body}</p>
-            </div>
-
-            <div className={styles.qualsCard}>
-              <h3 className={styles.qualsTitle}>{en.contact.info.qualifications}</h3>
-              <div className={styles.qualsBadges}>
-                {["ACCA", "MAAT", "AAT Member", "ICAEW Member"].map((q) => (
-                  <span key={q} className={styles.qualBadge}>{q}</span>
-                ))}
+            <FadeIn direction="right">
+              <div className={styles.contactCard}>
+                <h2 className={styles.contactTitle}>{en.contact.info.heading}</h2>
+                <ul className={styles.contactList}>
+                  {contactDetails.map(({ icon, label, value, href }) => (
+                    <li key={label} className={styles.contactItem}>
+                      <div className={styles.contactIcon}>{icon}</div>
+                      <div>
+                        <p className={styles.contactLabel}>{label}</p>
+                        {href ? (
+                          <a href={href} className={styles.contactLink}>{value}</a>
+                        ) : (
+                          <p className={styles.contactValue}>{value}</p>
+                        )}
+                      </div>
+                    </li>
+                  ))}
+                </ul>
               </div>
-            </div>
+            </FadeIn>
+
+            <FadeIn direction="right" delay={0.1}>
+              <div className={styles.consultCard}>
+                <h3 className={styles.consultTitle}>{en.contact.info.freeConsultation.heading}</h3>
+                <p className={styles.consultBody}>{en.contact.info.freeConsultation.body}</p>
+              </div>
+            </FadeIn>
+
+            <FadeIn direction="right" delay={0.2}>
+              <div className={styles.qualsCard}>
+                <h3 className={styles.qualsTitle}>{en.contact.info.qualifications}</h3>
+                <div className={styles.qualsBadges}>
+                  {["ACCA", "MAAT", "AAT Member", "ICAEW Member"].map((q) => (
+                    <span key={q} className={styles.qualBadge}>{q}</span>
+                  ))}
+                </div>
+              </div>
+            </FadeIn>
           </div>
         </div>
       </section>

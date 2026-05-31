@@ -3,12 +3,22 @@
 // ─── Hero section ─────────────────────────────────────────────────────────────
 
 .hero {
-  background: $color-slate;
-  padding: 4rem $px-section;
-  border-bottom: 1px solid $color-gray-100;
+  background: $color-navy;
+  margin-top: -6.4rem;
+  padding: 12rem $px-section 4.8rem;
+  position: relative;
+  overflow: hidden;
 
   @include md {
-    padding: 6.4rem $px-section;
+    padding: 13.6rem $px-section 5.6rem;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 70% 50%, rgba(40, 152, 184, 0.15), transparent 60%);
+    pointer-events: none;
   }
 }
 
@@ -27,9 +37,10 @@
 
 .heroTitle {
   font-size: $fs-3xl;
-  font-weight: 700;
-  color: $color-navy;
+  font-weight: 800;
+  color: $color-white;
   margin-bottom: 1.6rem;
+  letter-spacing: -0.02em;
 
   @include md {
     font-size: $fs-4xl;
@@ -37,9 +48,9 @@
 }
 
 .heroSub {
-  color: $color-gray-500;
+  color: $color-on-dark;
   max-width: 57.6rem;
-  line-height: 1.65;
+  line-height: 1.7;
 }
 
 // ─── About / experience section ───────────────────────────────────────────────
@@ -213,7 +224,7 @@
   width: 5.6rem;
   height: 5.6rem;
   border-radius: $radius-lg;
-  background: $color-navy;
+  background: linear-gradient(135deg, $color-navy, $color-teal-dark);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -227,12 +238,12 @@
   font-weight: 600;
   color: $color-navy;
   margin-bottom: 0.6rem;
-  font-size: $fs-sm;
+  font-size: $fs-base;
   line-height: 1.4;
 }
 
 .qualDesc {
-  font-size: $fs-xs;
+  font-size: $fs-sm;
   color: $color-gray-500;
   line-height: 1.65;
 }
@@ -276,11 +287,29 @@
   text-align: center;
   box-shadow: $shadow-sm;
   transition: border-color $t-base, box-shadow $t-base, transform $t-base;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, $color-teal, $color-navy);
+    opacity: 0;
+    transition: opacity $t-base;
+  }
 
   &:hover {
     border-color: $color-teal;
     box-shadow: $shadow-md;
-    transform: scale(1.02);
+    transform: translateY(-3px);
+
+    &::before {
+      opacity: 1;
+    }
   }
 
   &:active {
