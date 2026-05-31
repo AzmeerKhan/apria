@@ -114,6 +114,7 @@
   box-shadow: $shadow-sm;
   display: flex;
   flex-direction: column;
+  height: 100%;
   transition: box-shadow $t-base, transform $t-base;
 
   &:hover {
