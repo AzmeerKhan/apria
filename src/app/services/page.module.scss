@@ -168,6 +168,25 @@
   margin-top: 0.2rem;
 }
 
+.bookBtn {
+  margin-top: 2.4rem;
+  width: 100%;
+  padding: 1.2rem;
+  border-radius: $radius-full;
+  border: 1.5px solid $color-teal;
+  background: transparent;
+  color: $color-teal;
+  font-size: $fs-sm;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background $t-base, color $t-base;
+
+  &:hover {
+    background: $color-teal;
+    color: $color-white;
+  }
+}
+
 // ─── CTA section ─────────────────────────────────────────────────────────────
 
 .cta {

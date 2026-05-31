@@ -20,6 +20,15 @@ export const HERO_SLIDES = [
   { id: "slide3", titleKey: "home.hero.slide3.title", subtitleKey: "home.hero.slide3.subtitle" },
 ] as const;
 
+export const SERVICE_VALUE_MAP: Record<ServiceId, string> = {
+  annualAccounts:     "annual-accounts",
+  vatReturns:         "vat-returns",
+  cisReturn:          "cis-return",
+  selfAssessment:     "self-assessment",
+  utrRegistration:    "utr-registration",
+  hmrcInvestigations: "hmrc-investigations",
+};
+
 export const SERVICE_SELECT_OPTIONS = [
   { value: "",                     label: "Select a service…"                      },
   { value: "annual-accounts",      label: "Annual Accounts & Financial Statements" },

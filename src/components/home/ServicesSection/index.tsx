@@ -5,18 +5,10 @@ import { useRouter } from "next/navigation";
 import ServiceCard from "@/components/ServiceCard";
 import FadeIn from "@/components/FadeIn";
 import BookingModal from "@/components/BookingModal";
-import { SERVICE_CATEGORIES, type ServiceId } from "@/constants/services";
+import { SERVICE_CATEGORIES, SERVICE_VALUE_MAP, type ServiceId } from "@/constants/services";
 import en from "@/i18n/messages/en.json";
 import styles from "./style.module.scss";
 
-const serviceValueMap: Record<ServiceId, string> = {
-  annualAccounts: "annual-accounts",
-  vatReturns: "vat-returns",
-  cisReturn: "cis-return",
-  selfAssessment: "self-assessment",
-  utrRegistration: "utr-registration",
-  hmrcInvestigations: "hmrc-investigations",
-};
 
 const serviceIcons: Record<ServiceId, React.ReactNode> = {
   annualAccounts: (
@@ -65,11 +57,11 @@ export default function ServicesSection() {
 
   const handleCardClick = (id: ServiceId, side: "left" | "right") => {
     if (window.innerWidth < 768) {
-      router.push(`/contact?service=${serviceValueMap[id]}`);
+      router.push(`/contact?service=${SERVICE_VALUE_MAP[id]}`);
     } else {
       setModal({
         serviceLabel: en.services[id].title,
-        serviceValue: serviceValueMap[id],
+        serviceValue: SERVICE_VALUE_MAP[id],
         slideFrom: side === "left" ? "right" : "left",
       });
     }
