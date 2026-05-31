@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useTranslations } from "next-intl";
 import { clsx } from "clsx";
 import { motion, AnimatePresence } from "framer-motion";
@@ -16,10 +16,22 @@ export default function Navbar() {
   const t = useTranslations("nav");
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [hidden, setHidden] = useState(false);
+  const prevY = useRef(0);
 
   useEffect(() => {
-    const onScroll = () =>
-      setScrolled(window.scrollY > window.innerHeight * 0.7);
+    const onScroll = () => {
+      const y = window.scrollY;
+      setScrolled(y > window.innerHeight * 0.1);
+      if (y < 80) {
+        setHidden(false);
+      } else if (y > prevY.current + 4) {
+        setHidden(true);
+      } else if (y < prevY.current - 4) {
+        setHidden(false);
+      }
+      prevY.current = y;
+    };
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
     return () => window.removeEventListener("scroll", onScroll);
@@ -39,6 +51,7 @@ export default function Navbar() {
       className={clsx(
         styles.header,
         scrolled ? styles.scrolled : styles.glass,
+        hidden && styles.hidden,
       )}
     >
       <nav className={styles.nav}>

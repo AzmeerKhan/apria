@@ -9,7 +9,12 @@
   transition:
     background $t-slow,
     border-color $t-slow,
-    box-shadow $t-slow;
+    box-shadow $t-slow,
+    transform 0.35s ease;
+}
+
+.hidden {
+  transform: translateY(-100%);
 }
 
 .glass {
