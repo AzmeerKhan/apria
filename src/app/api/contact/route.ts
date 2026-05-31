@@ -70,15 +70,20 @@ export async function POST(req: Request) {
   `;
 
   try {
-    await resend.emails.send({
+    const { error } = await resend.emails.send({
       from: process.env.RESEND_FROM_EMAIL!,
       to: process.env.RESEND_TO_EMAIL!,
       replyTo: email,
       subject,
       html,
     });
+    if (error) {
+      console.error("[contact] Resend error:", error);
+      return Response.json({ ok: false, error: error.message }, { status: 500 });
+    }
     return Response.json({ ok: true });
-  } catch {
+  } catch (err) {
+    console.error("[contact] Unexpected error:", err);
     return Response.json({ ok: false }, { status: 500 });
   }
 }
