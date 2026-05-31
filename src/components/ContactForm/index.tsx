@@ -26,11 +26,9 @@ export default function ContactForm({ enquiryType = "enquiry", defaultService = 
     const data = new FormData(form);
 
     try {
-      // Replace YOUR_FORM_ID with your Formspree endpoint ID
-      const res = await fetch("https://formspree.io/f/YOUR_FORM_ID", {
+      const res = await fetch("/api/contact", {
         method: "POST",
         body: data,
-        headers: { Accept: "application/json" },
       });
       if (res.ok) {
         setState("success");
@@ -60,6 +58,7 @@ export default function ContactForm({ enquiryType = "enquiry", defaultService = 
 
   return (
     <form onSubmit={handleSubmit} className={styles.form} noValidate>
+      <input type="hidden" name="enquiryType" value={enquiryType} />
       <div className={styles.row}>
         <div className={styles.field}>
           <label className={styles.label} htmlFor="name">
