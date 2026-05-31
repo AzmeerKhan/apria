@@ -7,9 +7,16 @@ import styles from "./style.module.scss";
 
 export type EnquiryType = "enquiry" | "booking";
 
-export default function ContactTabs() {
+interface Props {
+  defaultService?: string;
+  defaultTab?: EnquiryType;
+}
+
+export default function ContactTabs({ defaultService, defaultTab }: Props) {
   const t = useTranslations("contact.tabs");
-  const [active, setActive] = useState<EnquiryType>("enquiry");
+  const [active, setActive] = useState<EnquiryType>(
+    defaultTab === "booking" || defaultService ? "booking" : "enquiry"
+  );
 
   return (
     <div>
@@ -26,7 +33,7 @@ export default function ContactTabs() {
           </button>
         ))}
       </div>
-      <ContactForm enquiryType={active} />
+      <ContactForm enquiryType={active} defaultService={defaultService} />
     </div>
   );
 }

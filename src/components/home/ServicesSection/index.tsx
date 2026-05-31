@@ -1,8 +1,22 @@
+"use client";
+
+import { useState } from "react";
+import { useRouter } from "next/navigation";
 import ServiceCard from "@/components/ServiceCard";
 import FadeIn from "@/components/FadeIn";
+import BookingModal from "@/components/BookingModal";
 import { SERVICE_CATEGORIES, type ServiceId } from "@/constants/services";
 import en from "@/i18n/messages/en.json";
 import styles from "./style.module.scss";
+
+const serviceValueMap: Record<ServiceId, string> = {
+  annualAccounts: "annual-accounts",
+  vatReturns: "vat-returns",
+  cisReturn: "cis-return",
+  selfAssessment: "self-assessment",
+  utrRegistration: "utr-registration",
+  hmrcInvestigations: "hmrc-investigations",
+};
 
 const serviceIcons: Record<ServiceId, React.ReactNode> = {
   annualAccounts: (
@@ -39,8 +53,30 @@ const serviceIcons: Record<ServiceId, React.ReactNode> = {
 
 const [lc, se] = SERVICE_CATEGORIES;
 
+type ModalState = {
+  serviceLabel: string;
+  serviceValue: string;
+  slideFrom: "left" | "right";
+} | null;
+
 export default function ServicesSection() {
+  const router = useRouter();
+  const [modal, setModal] = useState<ModalState>(null);
+
+  const handleCardClick = (id: ServiceId, side: "left" | "right") => {
+    if (window.innerWidth < 768) {
+      router.push(`/contact?service=${serviceValueMap[id]}`);
+    } else {
+      setModal({
+        serviceLabel: en.services[id].title,
+        serviceValue: serviceValueMap[id],
+        slideFrom: side === "left" ? "right" : "left",
+      });
+    }
+  };
+
   return (
+    <>
     <section className={styles.services}>
       <div className={styles.splitBg} aria-hidden="true">
         <div className={styles.leftBg} />
@@ -60,7 +96,7 @@ export default function ServicesSection() {
             </FadeIn>
             {lc.serviceIds.map((id, i) => (
               <FadeIn key={id} direction="left" delay={0.05 + i * 0.08} className={styles.cardWrapper}>
-                <ServiceCard dark icon={serviceIcons[id]} title={en.services[id].title} desc={en.services[id].summary} />
+                <ServiceCard dark icon={serviceIcons[id]} title={en.services[id].title} desc={en.services[id].summary} onClick={() => handleCardClick(id, "left")} />
               </FadeIn>
             ))}
           </div>
@@ -71,12 +107,22 @@ export default function ServicesSection() {
             </FadeIn>
             {se.serviceIds.map((id, i) => (
               <FadeIn key={id} direction="right" delay={0.05 + i * 0.08} className={styles.cardWrapper}>
-                <ServiceCard dark icon={serviceIcons[id]} title={en.services[id].title} desc={en.services[id].summary} />
+                <ServiceCard dark icon={serviceIcons[id]} title={en.services[id].title} desc={en.services[id].summary} onClick={() => handleCardClick(id, "right")} />
               </FadeIn>
             ))}
           </div>
         </div>
       </div>
     </section>
+
+    {modal && (
+      <BookingModal
+        serviceLabel={modal.serviceLabel}
+        serviceValue={modal.serviceValue}
+        slideFrom={modal.slideFrom}
+        onClose={() => setModal(null)}
+      />
+    )}
+    </>
   );
 }

@@ -42,7 +42,12 @@ const contactDetails = [
   },
 ];
 
-export default function ContactPage() {
+export default async function ContactPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ service?: string; tab?: string }>;
+}) {
+  const { service, tab } = await searchParams;
   return (
     <>
       <section className={styles.hero}>
@@ -57,7 +62,7 @@ export default function ContactPage() {
         <div className={styles.layout}>
           <div className={styles.formCard}>
             <h2 className={styles.formTitle}>{en.contact.form.heading}</h2>
-            <ContactTabs />
+            <ContactTabs defaultService={service} defaultTab={tab === "booking" ? "booking" : undefined} />
           </div>
 
           <div className={styles.sidebar}>

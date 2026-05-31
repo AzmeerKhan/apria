@@ -93,7 +93,7 @@ export default function HeroBanner() {
               transition={{ duration: 0.45, delay: 1.2, ease: "easeIn" }}
               className={styles.ctaDesktop}
             >
-              <Link href={ROUTES.CONTACT} className={styles.ctaBtn}>
+              <Link href={`${ROUTES.CONTACT}?tab=booking`} className={styles.ctaBtn}>
                 Book Appointment
               </Link>
               <div className={styles.contactRow}>
@@ -163,7 +163,7 @@ export default function HeroBanner() {
             transition={{ duration: 0.45, delay: 1.2, ease: "easeIn" }}
             className={styles.ctaMobile}
           >
-            <Link href={ROUTES.CONTACT} className={styles.ctaBtn}>
+            <Link href={`${ROUTES.CONTACT}?tab=booking`} className={styles.ctaBtn}>
               Book Appointment
             </Link>
             <div className={styles.contactRow}>

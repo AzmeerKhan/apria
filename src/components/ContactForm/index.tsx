@@ -10,9 +10,10 @@ type FormState = "idle" | "submitting" | "success" | "error";
 
 interface Props {
   enquiryType?: EnquiryType;
+  defaultService?: string;
 }
 
-export default function ContactForm({ enquiryType = "enquiry" }: Props) {
+export default function ContactForm({ enquiryType = "enquiry", defaultService = "" }: Props) {
   const t = useTranslations("contact.form");
   const tCommon = useTranslations("common");
   const isBooking = enquiryType === "booking";
@@ -99,7 +100,7 @@ export default function ContactForm({ enquiryType = "enquiry" }: Props) {
 
       <div className={styles.field}>
         <label className={styles.label} htmlFor="service">{t("service")}</label>
-        <select id="service" name="service" className={styles.select}>
+        <select id="service" name="service" className={styles.select} defaultValue={defaultService}>
           {SERVICE_SELECT_OPTIONS.map(({ value, label }) => (
             <option key={value} value={value}>{label}</option>
           ))}

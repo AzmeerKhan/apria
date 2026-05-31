@@ -21,6 +21,10 @@
     box-shadow $t-slow,
     border-color $t-slow;
   cursor: default;
+
+  &.clickable {
+    cursor: pointer;
+  }
   position: relative;
   overflow: hidden;
 
