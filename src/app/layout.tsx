@@ -17,8 +17,8 @@ export const metadata: Metadata = {
     template: "%s | APRIA",
   },
   icons: {
-    icon: "/apria-logo.svg",
-    shortcut: "/apria-logo.svg",
+    icon: "/apria-logo.png",
+    shortcut: "/apria-logo.png",
   },
   description:
     "APRIA provides expert accounting and financial advisory services. Qualified ACCA accountant and AAT member with 5 years of experience in financial reporting, tax planning, and business advisory.",

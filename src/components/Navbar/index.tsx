@@ -9,7 +9,11 @@ import { clsx } from "clsx";
 import { motion, AnimatePresence } from "framer-motion";
 import styles from "./style.module.scss";
 import { ROUTES, NAV_LINKS } from "@/constants/routes";
-import { CONTACT_EMAIL, CONTACT_PHONE, CONTACT_PHONE_HREF } from "@/constants/contact";
+import {
+  CONTACT_EMAIL,
+  CONTACT_PHONE,
+  CONTACT_PHONE_HREF,
+} from "@/constants/contact";
 import en from "@/i18n/messages/en.json";
 
 export default function Navbar() {
@@ -58,9 +62,9 @@ export default function Navbar() {
       <nav className={styles.nav}>
         <Link href={ROUTES.HOME} className={styles.logo} onClick={close}>
           <Image
-            src="/apria-logo.svg"
+            src="/apria-logo.png"
             alt="APRIA"
-            width={44}
+            width={66}
             height={44}
             priority
           />
@@ -176,10 +180,10 @@ export default function Navbar() {
                   onClick={close}
                 >
                   <Image
-                    src="/apria-logo.svg"
+                    src="/apria-logo.png"
                     alt="APRIA"
-                    width={36}
-                    height={36}
+                    width={66}
+                    height={44}
                   />
                   <span className={styles.logoText}>APRIA</span>
                 </Link>
