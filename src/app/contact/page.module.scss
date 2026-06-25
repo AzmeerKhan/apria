@@ -1,4 +1,4 @@
-@use '../../styles/variables' as *;
+@use "../../styles/variables" as *;
 
 // ─── Hero section ─────────────────────────────────────────────────────────────
 
@@ -14,7 +14,7 @@
   }
 
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: 0;
     left: $px-nav;
@@ -295,4 +295,3 @@
     background: $color-teal;
   }
 }
-
