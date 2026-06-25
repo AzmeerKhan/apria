@@ -19,6 +19,8 @@ export default function LocationSection() {
           src={CONTACT_MAP_URL}
           title="Office location"
           loading="lazy"
+          allowFullScreen
+          referrerPolicy="strict-origin-when-cross-origin"
           style={{
             width: "100%",
             height: "480px",

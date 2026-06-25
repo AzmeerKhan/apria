@@ -5,57 +5,6 @@
   padding: 8rem $px-section;
   position: relative;
   overflow: hidden;
-  margin-top: -1px;
-}
-
-.splitBg {
-  position: absolute;
-  top: -1px;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 0;
-  display: none;
-
-  @include md {
-    display: block;
-  }
-}
-
-.leftBg {
-  position: absolute;
-  inset: 0;
-  background: $color-navy;
-  clip-path: polygon(
-    0 0,
-    calc(50% + 6rem) 0,
-    calc(50% - 6rem) 100%,
-    0 100%
-  );
-}
-
-.rightBg {
-  position: absolute;
-  inset: 0;
-  background: $color-navy-dark;
-  clip-path: polygon(
-    calc(50% + 6rem) 0,
-    100% 0,
-    100% 100%,
-    calc(50% - 6rem) 100%
-  );
-}
-
-.glow {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  background: radial-gradient(
-    ellipse at 25% 50%,
-    rgba(40, 152, 184, 0.1),
-    transparent 60%
-  );
-  pointer-events: none;
 }
 
 .inner {
@@ -68,21 +17,21 @@
 
   @include lg {
     flex-direction: row;
-    align-items: center;
-    gap: 6rem;
+    align-items: flex-start;
+    gap: 8rem;
   }
 }
 
 .left {
-  flex: 1;
+  flex: 1.2;
 }
 
 .badge {
   display: inline-block;
-  font-size: $fs-sm;
+  font-size: $fs-xs;
   font-weight: 600;
-  color: $color-teal;
-  letter-spacing: 0.1em;
+  color: $color-gold;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   margin-bottom: 2rem;
 }
@@ -92,12 +41,16 @@
   font-weight: 800;
   font-size: $fs-3xl;
   color: $color-white;
-  line-height: 1.2;
+  line-height: 1.15;
   letter-spacing: -0.02em;
   margin-bottom: 2.4rem;
 
   @include md {
     font-size: $fs-4xl;
+  }
+
+  @include xl {
+    font-size: $fs-5xl;
   }
 }
 
@@ -105,22 +58,46 @@
   font-size: $fs-base;
   color: $color-on-dark;
   line-height: 1.8;
+  max-width: 44rem;
 }
 
 .right {
   flex: 1;
-  display: grid;
-  grid-template-rows: repeat(4, 1fr);
-  gap: 2.4rem;
+  display: flex;
+  flex-direction: column;
+  padding-top: 0.8rem;
+
+  @include lg {
+    border-top: $rule-gold;
+    padding-top: 2.4rem;
+  }
 }
 
 .point {
-  width: 100%;
-  max-width: 38rem;
-  margin: 0 auto;
-  padding-left: 2rem;
-  border-left: 2px solid $color-teal;
-  align-self: center;
+  display: grid;
+  grid-template-columns: 4rem 1fr;
+  gap: 1.6rem;
+  align-items: start;
+  padding: 2rem 0;
+  border-bottom: $rule-on-dark;
+
+  &:first-child {
+    @include lg {
+      padding-top: 0;
+    }
+  }
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.pointNum {
+  font-size: $fs-sm;
+  font-weight: 700;
+  color: $color-gold;
+  padding-top: 0.2rem;
+  line-height: 1;
 }
 
 .pointLabel {
@@ -128,7 +105,7 @@
   font-size: $fs-base;
   font-weight: 700;
   color: $color-white;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.5rem;
 }
 
 .pointDesc {

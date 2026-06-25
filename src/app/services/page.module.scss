@@ -16,9 +16,11 @@
   &::after {
     content: '';
     position: absolute;
-    inset: 0;
-    background: radial-gradient(circle at 70% 50%, rgba(40, 152, 184, 0.15), transparent 60%);
-    pointer-events: none;
+    bottom: 0;
+    left: $px-nav;
+    right: $px-nav;
+    height: 1px;
+    background: rgba(184, 147, 90, 0.2);
   }
 }
 
@@ -42,8 +44,8 @@
 }
 
 .sectorsCard {
-  background: rgba(255, 255, 255, 0.07);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(7, 20, 40, 0.88);
+  border: 1px solid rgba(184, 147, 90, 0.18);
   border-radius: $radius-2xl;
   padding: 2.4rem 2.8rem;
   flex-shrink: 0;
@@ -54,12 +56,14 @@
 }
 
 .sectorsCardLabel {
-  font-size: $fs-sm;
-  font-weight: 700;
-  letter-spacing: 0.06em;
+  font-size: $fs-xs;
+  font-weight: 600;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: $color-teal;
+  color: $color-gold;
   margin-bottom: 1.6rem;
+  padding-bottom: 1.6rem;
+  border-bottom: 1px solid rgba(184, 147, 90, 0.18);
 }
 
 .sectorsList {
@@ -68,19 +72,29 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
 }
 
 .sectorItem {
   display: flex;
   align-items: center;
   gap: 1rem;
+  padding: 1.1rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+
+  &:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  &:first-child {
+    padding-top: 0;
+  }
 }
 
 .sectorCheck {
   width: 1.8rem;
   height: 1.8rem;
-  color: $color-teal;
+  color: $color-gold;
   flex-shrink: 0;
 }
 
@@ -154,7 +168,7 @@
 
   &:hover {
     box-shadow: $shadow-md;
-    transform: scale(1.02);
+    transform: translateY(-4px);
   }
 
   &:active {
@@ -162,17 +176,33 @@
   }
 }
 
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+
 .serviceIconWrap {
   width: 4.8rem;
   height: 4.8rem;
-  border-radius: $radius-lg;
-  background: linear-gradient(135deg, $color-teal, $color-teal-dark);
-  color: $color-white;
+  border-radius: $radius-md;
+  background: $color-slate;
+  border: 1px solid $color-gray-100;
+  color: $color-teal;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 2rem;
   flex-shrink: 0;
+}
+
+.serviceIndex {
+  font-size: $fs-xs;
+  font-weight: 700;
+  color: $color-gray-400;
+  letter-spacing: 0.05em;
+  line-height: 1;
+  padding-top: 0.4rem;
 }
 
 .serviceTitle {

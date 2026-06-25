@@ -52,11 +52,6 @@ export default function StatsBar() {
 
   return (
     <section ref={ref} className={styles.section}>
-      <div className={styles.splitBg} aria-hidden="true">
-        <div className={styles.leftBg} />
-        <div className={styles.rightBg} />
-      </div>
-
       <div className={styles.inner}>
         <motion.div
           className={styles.stats}

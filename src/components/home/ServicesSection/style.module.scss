@@ -54,6 +54,23 @@
 
     .sectorCard:nth-child(1) {
       grid-row: 1 / span 2;
+
+      .cardBody {
+        top: 0;
+        bottom: auto;
+        height: auto;
+        justify-content: flex-start;
+        padding: 3.2rem;
+        background: linear-gradient(to bottom, rgba(5, 14, 40, 0.7) 0%, transparent 60%);
+      }
+
+      .cardTitle {
+        font-size: $fs-3xl;
+      }
+
+      .cardDesc {
+        max-width: 28rem;
+      }
     }
 
     .sectorCard:nth-child(4) {

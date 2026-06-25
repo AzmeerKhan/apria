@@ -75,7 +75,12 @@ export default function ServicesGrid() {
                 transition={{ duration: 0.6, delay: (i % 3) * 0.08, ease: "easeOut" }}
                 className={styles.serviceCard}
               >
-                <div className={styles.serviceIconWrap}>{icons[svcId]}</div>
+                <div className={styles.cardHeader}>
+                  <div className={styles.serviceIconWrap}>{icons[svcId]}</div>
+                  <span className={styles.serviceIndex} aria-hidden="true">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                </div>
                 <h2 className={styles.serviceTitle}>{svc.title}</h2>
                 <p className={styles.serviceSummary}>{svc.summary}</p>
                 <ul className={styles.servicePoints}>

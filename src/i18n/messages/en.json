@@ -61,12 +61,24 @@
       "badge": "Our Goal",
       "heading": "Built for Small Business",
       "subheading": "Why we started Apria",
-      "body": "Too many small business owners and sole traders are left navigating HMRC deadlines, tax returns, and compliance requirements on their own. We started Apria to change that. Our goal is simple: give every small business access to the same quality of accounting advice that larger companies take for granted, at a price that makes sense.",
+      "body": "People work hard to earn money and face many challenges to save it. Our goal is to protect and enhance our clients’ hard-earned wealth through accurate accounting, proactive financial guidance, and trusted professional support. We understand the effort and dedication required to earn and save money, and we are committed to helping individuals and businesses achieve financial stability, growth, and peace of mind through reliable and tailored accounting solutions.",
       "points": [
-        { "label": "Clear advice", "desc": "No jargon, no surprises. We explain everything in plain language so you always know where you stand." },
-        { "label": "Proactive support", "desc": "We flag issues before they become problems, keeping you ahead of deadlines and compliant at all times." },
-        { "label": "Personal service", "desc": "You deal directly with a qualified accountant who knows your business, not a call centre." },
-        { "label": "On-time filing", "desc": "We track every deadline and submission date so you never face late penalties or HMRC charges." }
+        {
+          "label": "Clear advice",
+          "desc": "No jargon, no surprises. We explain everything in plain language so you always know where you stand."
+        },
+        {
+          "label": "Proactive support",
+          "desc": "We flag issues before they become problems, keeping you ahead of deadlines and compliant at all times."
+        },
+        {
+          "label": "Personal service",
+          "desc": "You deal directly with a qualified accountant who knows your business, not a call centre."
+        },
+        {
+          "label": "On-time filing",
+          "desc": "We track every deadline and submission date so you never face late penalties or HMRC charges."
+        }
       ]
     },
     "credentials": {
@@ -271,7 +283,7 @@
     "tagline": "Professional accounting and financial advisory services. Trusted partner for small businesses.",
     "quickLinks": "Quick Links",
     "servicesLabel": "Services",
-    "copyright": "APRIA. All rights reserved.",
+    "copyright": "Apria Accountants. All rights reserved.",
     "credentials": "Qualified Accountant · ACCA · AAT Member"
   }
 }

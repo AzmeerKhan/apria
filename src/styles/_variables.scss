@@ -59,6 +59,11 @@ $shadow-sm: 0 1px 4px rgba(0, 0, 0, 0.05);
 $shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
 $shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
 
+// Ruling tokens — structural dividers
+$rule-light:   1px solid $color-gray-100;
+$rule-gold:    1px solid rgba(184, 147, 90, 0.3);
+$rule-on-dark: 1px solid rgba(255, 255, 255, 0.1);
+
 // Transitions
 $t-fast: 0.15s ease;
 $t-base: 0.2s ease;

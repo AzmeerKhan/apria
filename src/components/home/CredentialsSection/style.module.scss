@@ -1,11 +1,11 @@
 @use "../../../styles/variables" as *;
 
 .credentials {
-  background: $color-slate;
-  padding: 4.8rem $px-section;
+  background: $color-white;
+  padding: 6rem $px-section 7.2rem;
 
   @include md {
-    padding: 6rem $px-section;
+    padding: 8rem $px-section;
   }
 }
 
@@ -14,79 +14,73 @@
 }
 
 .sectionHeader {
-  text-align: center;
-  margin-bottom: 5.6rem;
+  display: flex;
+  align-items: center;
+  gap: 2.4rem;
+  margin-bottom: 4rem;
+
+  &::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: rgba(184, 147, 90, 0.3);
+  }
 }
 
 .sectionTitle {
   font-family: $font-display;
   font-weight: 800;
-  font-size: $fs-3xl;
+  font-size: $fs-2xl;
   color: $color-navy;
-  margin-bottom: 1.2rem;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
 
   @include md {
-    font-size: $fs-4xl;
+    font-size: $fs-3xl;
   }
 }
 
-.sectionSub {
-  color: $color-gray-500;
-  font-size: $fs-lg;
-  max-width: 64rem;
-  margin: 0 auto;
-  line-height: 1.7;
+.credList {
+  display: flex;
+  flex-direction: column;
+  border-bottom: $rule-light;
 }
 
-.credGrid {
+.credRow {
   display: grid;
-  gap: 2rem;
+  grid-template-columns: 9rem 1fr;
+  gap: 2.4rem;
+  align-items: baseline;
+  padding: 2.8rem 0;
+  border-top: $rule-light;
 
-  @include sm {
-    grid-template-columns: repeat(2, 1fr);
+  @include md {
+    grid-template-columns: 12rem 1fr;
+    gap: 4rem;
+    padding: 3.2rem 0;
   }
 
   @include lg {
-    grid-template-columns: repeat(2, minmax(0, 32rem));
-    justify-content: center;
+    grid-template-columns: 14rem 1fr;
+    gap: 6.4rem;
   }
 }
 
-.credCard {
-  background: $color-white;
-  border-radius: $radius-2xl;
-  padding: 2.4rem;
-  border: 1px solid $color-gray-100;
-  box-shadow: $shadow-sm;
-  text-align: center;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  transition:
-    box-shadow $t-base,
-    transform $t-base;
-
-  &:hover {
-    box-shadow: $shadow-md;
-    transform: scale(1.02);
-  }
-
-  &:active {
-    transform: scale(0.98);
-  }
-}
-
-.credLabel {
-  font-size: $fs-2xl;
+.credAbbr {
+  font-family: $font-display;
+  font-size: $fs-3xl;
   font-weight: 800;
   color: $color-navy;
-  margin-bottom: 0.8rem;
+  letter-spacing: -0.02em;
+  line-height: 1;
 }
 
-.credDetail {
-  font-size: $fs-xs;
-  color: $color-gray-500;
-  line-height: 1.65;
-  flex: 1;
+.credFull {
+  font-size: $fs-base;
+  color: $color-gray-600;
+  line-height: 1.55;
+
+  @include md {
+    font-size: $fs-lg;
+  }
 }

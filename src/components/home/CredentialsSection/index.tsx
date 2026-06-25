@@ -1,4 +1,3 @@
-import StaggerGrid from "@/components/StaggerGrid";
 import FadeIn from "@/components/FadeIn";
 import { HOME_CREDENTIALS } from "@/constants/credentials";
 import en from "@/i18n/messages/en.json";
@@ -15,16 +14,15 @@ export default function CredentialsSection() {
       <div className={styles.container}>
         <FadeIn className={styles.sectionHeader}>
           <h2 className={styles.sectionTitle}>{en.home.credentials.heading}</h2>
-          <p className={styles.sectionSub}>{en.home.credentials.subheading}</p>
         </FadeIn>
-        <StaggerGrid className={styles.credGrid}>
-          {credentialCards.map(({ label, detail }) => (
-            <div key={label} className={styles.credCard}>
-              <div className={styles.credLabel}>{label}</div>
-              <p className={styles.credDetail}>{detail}</p>
-            </div>
+        <div className={styles.credList}>
+          {credentialCards.map(({ label, detail }, i) => (
+            <FadeIn key={label} delay={i * 0.12} className={styles.credRow}>
+              <span className={styles.credAbbr}>{label}</span>
+              <span className={styles.credFull}>{detail}</span>
+            </FadeIn>
           ))}
-        </StaggerGrid>
+        </div>
       </div>
     </section>
   );
