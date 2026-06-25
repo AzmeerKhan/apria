@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import ContactForm from "@/components/ContactForm";
 import styles from "./style.module.scss";
 
@@ -29,7 +29,7 @@ export default function BookingModal({ title, slideFrom, onClose, defaultService
   }, [onClose]);
 
   return (
-    <AnimatePresence>
+    <>
       <motion.div
         className={styles.backdrop}
         initial={{ opacity: 0 }}
@@ -68,6 +68,6 @@ export default function BookingModal({ title, slideFrom, onClose, defaultService
           />
         </div>
       </motion.div>
-    </AnimatePresence>
+    </>
   );
 }

@@ -58,17 +58,20 @@
   border-radius: $radius-full;
   font-size: $fs-xs;
   font-weight: 600;
-  background: rgba(255, 255, 255, 0.15);
-  color: $color-white;
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(184, 147, 90, 0.12);
+  color: $color-gold-light;
+  border: 1px solid rgba(184, 147, 90, 0.4);
   backdrop-filter: blur(4px);
+  letter-spacing: 0.05em;
 }
 
 .heading {
-  font-size: $fs-4xl;
+  font-family: $font-display;
   font-weight: 800;
+  font-size: $fs-4xl;
   color: $color-white;
-  line-height: 1.2;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
   margin-bottom: 1.6rem;
 
   @include sm {
@@ -104,18 +107,18 @@
   display: inline-block;
   padding: 1.6rem 3.2rem;
   border-radius: $radius-full;
-  background: $color-teal;
+  background: $color-gold;
   color: $color-white;
   font-weight: 600;
   font-size: $fs-base;
   text-decoration: none;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 24px rgba(184, 147, 90, 0.35);
   transition:
     filter $t-base,
     transform $t-base;
 
   &:hover {
-    filter: brightness(1.1);
+    filter: brightness(1.08);
     transform: scale(1.05);
   }
 
@@ -158,11 +161,11 @@
 }
 
 .servicesLabel {
-  font-size: $fs-sm;
+  font-size: $fs-xs;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: $color-on-dark;
+  letter-spacing: 0.12em;
+  color: $color-gold;
   margin-bottom: 2rem;
 }
 

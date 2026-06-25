@@ -19,8 +19,9 @@
 }
 
 .sectionTitle {
-  font-size: $fs-3xl;
+  font-family: $font-display;
   font-weight: 800;
+  font-size: $fs-3xl;
   color: $color-navy;
   margin-bottom: 1.2rem;
   letter-spacing: -0.02em;

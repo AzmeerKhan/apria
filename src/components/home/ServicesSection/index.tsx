@@ -89,9 +89,10 @@ export default function ServicesSection() {
         </div>
       </section>
 
-      <AnimatePresence>
+      <AnimatePresence mode="wait">
         {modal && (
           <BookingModal
+            key="booking-modal"
             title={modal.title}
             defaultSector={modal.sectorValue}
             slideFrom="right"

@@ -88,8 +88,9 @@
 }
 
 .heading {
-  font-size: $fs-3xl;
+  font-family: $font-display;
   font-weight: 800;
+  font-size: $fs-3xl;
   color: $color-white;
   line-height: 1.2;
   letter-spacing: -0.02em;

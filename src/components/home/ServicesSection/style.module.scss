@@ -15,8 +15,9 @@
 }
 
 .sectionTitle {
-  font-size: $fs-3xl;
+  font-family: $font-display;
   font-weight: 800;
+  font-size: $fs-3xl;
   color: $color-white;
   margin-bottom: 1.2rem;
   letter-spacing: -0.02em;
@@ -44,7 +45,20 @@
   }
 
   @include lg {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 1.4fr 1fr 1fr;
+    grid-template-rows: 26rem 26rem;
+
+    .sectorCard {
+      height: auto;
+    }
+
+    .sectorCard:nth-child(1) {
+      grid-row: 1 / span 2;
+    }
+
+    .sectorCard:nth-child(4) {
+      grid-column: 2 / span 2;
+    }
   }
 }
 

@@ -30,8 +30,9 @@
 }
 
 .ctaTitle {
-  font-size: $fs-2xl;
+  font-family: $font-display;
   font-weight: 700;
+  font-size: $fs-2xl;
   color: $color-white;
   margin-bottom: 1.6rem;
 
@@ -86,7 +87,7 @@
     transform $t-base;
 
   &:hover {
-    background: $color-teal-light;
+    background: $color-gold-light;
     transform: scale(1.05);
   }
 

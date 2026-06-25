@@ -1,32 +1,38 @@
 // Edit these to change the site theme
 
 // Brand
-$color-navy:        #1c3461;
-$color-navy-dark:   #0f1e3d;
-$color-teal:        #2898b8;
-$color-teal-dark:   #1a607a;
+$color-navy:        #0D1F3D;
+$color-navy-dark:   #071428;
+$color-teal:        #1F8AAD;
+$color-teal-dark:   #155F7A;
 $color-teal-light:  #e0f2fb;
+$color-gold:        #B8935A;
+$color-gold-light:  #F5EDD8;
 $color-green:       #28804a;
 $color-green-light: #dcf5e7;
 
 // Neutrals
 $color-white:    #ffffff;
-$color-slate:    #f8fafc;  // light section backgrounds
-$color-gray-100: #f3f4f6;  // borders, dividers
-$color-gray-200: #e5e7eb;  // form borders
-$color-gray-400: #9ca3af;  // placeholders, optional labels
-$color-gray-500: #6b7280;  // secondary / muted text
-$color-gray-600: #4b5563;  // body text
-$color-gray-700: #374151;  // primary text
+$color-slate:    #F5F3EE;  // warm cream for light sections
+$color-gray-100: #ece9e3;  // borders, dividers (warm)
+$color-gray-200: #e0dcd5;  // form borders
+$color-gray-400: #a09890;  // placeholders, optional labels
+$color-gray-500: #7a7068;  // secondary / muted text
+$color-gray-600: #514840;  // body text
+$color-gray-700: #2e2520;  // primary text
 
 // Text on dark/navy backgrounds
-$color-on-dark:     #bfdbfe;
-$color-on-dark-dim: #93c5fd;
+$color-on-dark:     #CDBFAB;  // warm ivory
+$color-on-dark-dim: #A8997E;  // warm muted
 
 // Error
 $color-error:        #ef4444;
 $color-error-bg:     #fef2f2;
 $color-error-border: #fecaca;
+
+// Font stacks
+$font-display: var(--font-inter), Arial, sans-serif;
+$font-body:    var(--font-inter), Arial, sans-serif;
 
 // Font sizes
 $fs-xs:   1.2rem;    // 12px
