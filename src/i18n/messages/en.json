@@ -16,7 +16,7 @@
   },
   "home": {
     "hero": {
-      "badge": "Qualified Accountant · ACCA · MAAT",
+      "badge": "Qualified Accountant · ACCA · AAT",
       "slide1": {
         "title": "Accounting for Limited Companies",
         "subtitle": "Annual accounts, VAT returns, and CIS compliance - handled accurately and submitted on time."
@@ -41,9 +41,7 @@
       "heading": "Qualified & Trusted",
       "subheading": "5 years of hands-on experience backed by professional qualifications and membership of the UK's leading accounting bodies.",
       "acca": "Association of Chartered Certified Accountants",
-      "maat": "Member of the Association of Accounting Technicians",
-      "aat": "Association of Accounting Technicians",
-      "icaew": "Institute of Chartered Accountants in England and Wales"
+      "aat": "Association of Accounting Technicians"
     },
     "stats": {
       "years": "Years Experience",
@@ -144,7 +142,7 @@
     "experience": {
       "heading": "5 Years of Expertise",
       "p1": "With five years of hands-on experience across a diverse range of industries, I have built a strong foundation in financial reporting, tax planning, and business advisory services.",
-      "p2": "I hold the ACCA and MAAT qualifications and am a proud member of both the Association of Accounting Technicians (AAT) and the Institute of Chartered Accountants in England and Wales (ICAEW).",
+      "p2": "I hold the ACCA qualification and am a proud member of the Association of Accounting Technicians (AAT).",
       "p3": "I am passionate about helping small businesses thrive. Whether you are just starting out or looking to scale, I bring the expertise and personal commitment to guide you through every financial challenge.",
       "p4": "My approach is simple: understand your goals, provide clear advice, and deliver work you can rely on."
     },
@@ -154,17 +152,9 @@
         "title": "Association of Chartered Certified Accountants",
         "desc": "A globally recognised qualification demonstrating the highest standards of accounting expertise and ethics."
       },
-      "maat": {
-        "title": "Member of the Association of Accounting Technicians",
-        "desc": "Awarded to accountants who have demonstrated technical competence and professional commitment."
-      },
       "aat": {
         "title": "Association of Accounting Technicians",
         "desc": "Full membership of the UK's leading professional body for accounting technicians."
-      },
-      "icaew": {
-        "title": "Institute of Chartered Accountants in England and Wales",
-        "desc": "Membership of one of the world's most prestigious professional bodies for chartered accountants."
       }
     },
     "values": {
@@ -243,6 +233,6 @@
     "quickLinks": "Quick Links",
     "servicesLabel": "Services",
     "copyright": "APRIA. All rights reserved.",
-    "credentials": "Qualified Accountant · ACCA · MAAT · AAT Member · ICAEW Member"
+    "credentials": "Qualified Accountant · ACCA · AAT Member"
   }
 }

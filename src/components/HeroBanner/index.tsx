@@ -8,7 +8,7 @@ import { ROUTES } from "@/constants/routes";
 import en from "@/i18n/messages/en.json";
 import styles from "./style.module.scss";
 
-const credentials = ["ACCA", "MAAT", "AAT", "ICAEW"] as const;
+const credentials = ["ACCA", "AAT"] as const;
 
 const services = [
   en.services.annualAccounts.title,

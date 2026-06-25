@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     shortcut: "/apria-logo.svg",
   },
   description:
-    "APRIA provides expert accounting and financial advisory services. Qualified ACCA & MAAT accountant, AAT and ICAEW member with 5 years of experience in financial reporting, tax planning, and business advisory.",
+    "APRIA provides expert accounting and financial advisory services. Qualified ACCA accountant and AAT member with 5 years of experience in financial reporting, tax planning, and business advisory.",
   keywords: [
     "accounting",
     "financial advisory",
@@ -29,9 +29,7 @@ export const metadata: Metadata = {
     "financial reporting",
     "business advisory",
     "ACCA",
-    "MAAT",
     "AAT",
-    "ICAEW",
   ],
 };
 

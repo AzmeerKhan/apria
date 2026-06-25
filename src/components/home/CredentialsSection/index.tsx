@@ -4,10 +4,8 @@ import en from "@/i18n/messages/en.json";
 import styles from "./style.module.scss";
 
 const credentialCards = [
-  { label: "ACCA",  detail: en.home.credentials.acca  },
-  { label: "MAAT",  detail: en.home.credentials.maat  },
-  { label: "AAT",   detail: en.home.credentials.aat   },
-  { label: "ICAEW", detail: en.home.credentials.icaew },
+  { label: "ACCA", detail: en.home.credentials.acca },
+  { label: "AAT",  detail: en.home.credentials.aat  },
 ];
 
 export default function CredentialsSection() {

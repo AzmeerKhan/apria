@@ -101,7 +101,7 @@ export default async function ContactPage({
               <div className={styles.qualsCard}>
                 <h3 className={styles.qualsTitle}>{en.contact.info.qualifications}</h3>
                 <div className={styles.qualsBadges}>
-                  {["ACCA", "MAAT", "AAT Member", "ICAEW Member"].map((q) => (
+                  {["ACCA", "AAT Member"].map((q) => (
                     <span key={q} className={styles.qualBadge}>{q}</span>
                   ))}
                 </div>
