@@ -13,7 +13,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "APRIA - Professional Accounting & Financial Advisory",
+    default: "Apria Accountants",
     template: "%s | APRIA",
   },
   icons: {
