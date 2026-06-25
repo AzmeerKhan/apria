@@ -14,6 +14,6 @@ export const CREDENTIALS = [
 export const CREDENTIAL_BADGES = ["ACCA", "AAT"] as const;
 
 export const HOME_CREDENTIALS = [
-  { label: "ACCA", detailKey: "home.credentials.acca" },
-  { label: "AAT", detailKey: "home.credentials.aat" },
+  { label: "ACCA", credKey: "acca" },
+  { label: "AAT",  credKey: "aat"  },
 ] as const;

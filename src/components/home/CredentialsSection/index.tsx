@@ -1,12 +1,13 @@
 import StaggerGrid from "@/components/StaggerGrid";
 import FadeIn from "@/components/FadeIn";
+import { HOME_CREDENTIALS } from "@/constants/credentials";
 import en from "@/i18n/messages/en.json";
 import styles from "./style.module.scss";
 
-const credentialCards = [
-  { label: "ACCA", detail: en.home.credentials.acca },
-  { label: "AAT",  detail: en.home.credentials.aat  },
-];
+const credentialCards = HOME_CREDENTIALS.map(({ label, credKey }) => ({
+  label,
+  detail: en.home.credentials[credKey],
+}));
 
 export default function CredentialsSection() {
   return (

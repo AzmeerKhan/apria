@@ -9,10 +9,11 @@ export type EnquiryType = "enquiry" | "booking";
 
 interface Props {
   defaultService?: string;
+  defaultSector?: string;
   defaultTab?: EnquiryType;
 }
 
-export default function ContactTabs({ defaultService, defaultTab }: Props) {
+export default function ContactTabs({ defaultService, defaultSector, defaultTab }: Props) {
   const t = useTranslations("contact.tabs");
   const [active, setActive] = useState<EnquiryType>(
     defaultTab === "booking" || defaultService ? "booking" : "enquiry"
@@ -33,7 +34,7 @@ export default function ContactTabs({ defaultService, defaultTab }: Props) {
           </button>
         ))}
       </div>
-      <ContactForm enquiryType={active} defaultService={defaultService} />
+      <ContactForm enquiryType={active} defaultService={defaultService} defaultSector={defaultSector} />
     </div>
   );
 }

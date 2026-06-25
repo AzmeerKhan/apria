@@ -4,6 +4,8 @@ import { ROUTES } from "@/constants/routes";
 import en from "@/i18n/messages/en.json";
 import styles from "./page.module.scss";
 import ServicesGrid from "./ServicesGrid";
+import SectorsHeroCard from "./SectorsHeroCard";
+import ServicesHeroLeft from "./ServicesHeroLeft";
 import FadeIn from "@/components/FadeIn";
 
 export const metadata: Metadata = {
@@ -15,12 +17,9 @@ export default function ServicesPage() {
   return (
     <>
       <section className={styles.hero}>
-        <div className={styles.container}>
-          <FadeIn>
-            <p className={styles.badge}>{en.services.badge}</p>
-            <h1 className={styles.heroTitle}>{en.services.heading}</h1>
-            <p className={styles.heroSub}>{en.services.subheading}</p>
-          </FadeIn>
+        <div className={styles.heroInner}>
+          <ServicesHeroLeft />
+          <SectorsHeroCard />
         </div>
       </section>
 
@@ -28,13 +27,13 @@ export default function ServicesPage() {
 
       <section className={styles.cta}>
         <div className={styles.ctaGradient} aria-hidden="true" />
-        <div className={styles.ctaContent}>
+        <FadeIn className={styles.ctaContent}>
           <h2 className={styles.ctaTitle}>{en.services.cta.heading}</h2>
           <p className={styles.ctaBody}>{en.services.cta.body}</p>
           <Link href={ROUTES.CONTACT} className={styles.ctaBtn}>
             {en.services.cta.button}
           </Link>
-        </div>
+        </FadeIn>
       </section>
     </>
   );

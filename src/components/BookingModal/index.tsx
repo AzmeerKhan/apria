@@ -6,13 +6,14 @@ import ContactForm from "@/components/ContactForm";
 import styles from "./style.module.scss";
 
 interface Props {
-  serviceLabel: string;
-  serviceValue: string;
+  title: string;
   slideFrom: "left" | "right";
   onClose: () => void;
+  defaultService?: string;
+  defaultSector?: string;
 }
 
-export default function BookingModal({ serviceLabel, serviceValue, slideFrom, onClose }: Props) {
+export default function BookingModal({ title, slideFrom, onClose, defaultService, defaultSector }: Props) {
   const x = slideFrom === "right" ? "100%" : "-100%";
   const panelClass = slideFrom === "right" ? styles.panelRight : styles.panelLeft;
 
@@ -42,7 +43,7 @@ export default function BookingModal({ serviceLabel, serviceValue, slideFrom, on
         className={`${styles.panel} ${panelClass}`}
         role="dialog"
         aria-modal="true"
-        aria-label={`Book ${serviceLabel}`}
+        aria-label={`Book appointment: ${title}`}
         initial={{ x }}
         animate={{ x: 0 }}
         exit={{ x }}
@@ -51,7 +52,7 @@ export default function BookingModal({ serviceLabel, serviceValue, slideFrom, on
         <div className={styles.header}>
           <div>
             <p className={styles.eyebrow}>Book a consultation</p>
-            <h2 className={styles.title}>{serviceLabel}</h2>
+            <h2 className={styles.title}>{title}</h2>
           </div>
           <button className={styles.closeBtn} onClick={onClose} aria-label="Close">
             <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
@@ -60,7 +61,11 @@ export default function BookingModal({ serviceLabel, serviceValue, slideFrom, on
           </button>
         </div>
         <div className={styles.body}>
-          <ContactForm enquiryType="booking" defaultService={serviceValue} />
+          <ContactForm
+            enquiryType="booking"
+            defaultService={defaultService}
+            defaultSector={defaultSector}
+          />
         </div>
       </motion.div>
     </AnimatePresence>

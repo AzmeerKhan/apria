@@ -1,48 +1,12 @@
 @use "../../../styles/variables" as *;
 
-.services {
-  position: relative;
-  overflow: hidden;
+.sectors {
   background: $color-navy;
-}
-
-// Both bg divs are absolute + full-width so clip-path % values are
-// relative to the same reference box — no gap/overlap math needed.
-.splitBg {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  display: none;
-
-  @include md {
-    display: block;
-  }
-}
-
-.leftBg {
-  position: absolute;
-  inset: 0;
-  background: $color-navy;
-  clip-path: polygon(0 0, calc(50% + 6rem) 0, calc(50% - 6rem) 100%, 0 100%);
-}
-
-.rightBg {
-  position: absolute;
-  inset: 0;
-  background: $color-navy-dark;
-  clip-path: polygon(calc(50% + 6rem) 0, 100% 0, 100% 100%, calc(50% - 6rem) 100%);
+  padding: 7.2rem $px-section;
 }
 
 .container {
-  position: relative;
-  z-index: 1;
-  max-width: $max-width;
-  margin: 0 auto;
-  padding: 3.2rem $px-section 7.2rem;
-
-  @include md {
-    padding: 4rem $px-section 9.6rem;
-  }
+  @include container;
 }
 
 .sectionHeader {
@@ -70,54 +34,89 @@
   line-height: 1.7;
 }
 
-.panels {
-  display: flex;
-  flex-direction: column;
-  gap: 4.8rem;
+.sectorsGrid {
+  display: grid;
+  gap: 1.6rem;
+  grid-template-columns: 1fr;
 
-  @include md {
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 0;
+  @include sm {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include lg {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
-.leftPanel {
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
+.sectorCard {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 28rem;
+  border-radius: $radius-2xl;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  background: $color-navy-dark;
+  text-align: left;
+  transition: transform $t-base;
 
-  @include md {
-    flex: 1;
-    padding-right: 8rem;
+  @include sm {
+    height: 32rem;
+  }
+
+  &:hover {
+    transform: translateY(-6px);
+
+    .cardImage {
+      transform: scale(1.06);
+    }
+
+    .cardOverlay {
+      opacity: 0.75;
+    }
   }
 }
 
-.rightPanel {
+.cardImage {
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.cardOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(5, 14, 40, 0.92) 0%,
+    rgba(5, 14, 40, 0.55) 45%,
+    rgba(5, 14, 40, 0.15) 100%
+  );
+  transition: opacity $t-base;
+}
+
+.cardBody {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 18rem;
+  padding: 2.4rem;
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
-
-  @include md {
-    flex: 1;
-    padding-left: 8rem;
-    margin-top: 10rem;
-  }
+  justify-content: flex-start;
 }
 
-.headerCell {
-  margin-bottom: 0.4rem;
-}
-
-.columnLabel {
-  font-size: $fs-lg;
+.cardTitle {
+  font-size: $fs-2xl;
   font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
   color: $color-white;
+  margin-bottom: 0.8rem;
+  letter-spacing: -0.01em;
 }
 
-.cardWrapper {
-  display: flex;
-  flex-direction: column;
+.cardDesc {
+  font-size: $fs-base;
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.6;
 }

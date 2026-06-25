@@ -21,7 +21,7 @@ export async function POST(req: Request) {
     <div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;color:#374151">
       <div style="background:#1c3461;padding:24px 32px;border-radius:8px 8px 0 0">
         <h1 style="color:#fff;margin:0;font-size:20px">
-          ${isBooking ? "📅 New Booking Request" : "📩 New Enquiry"} — APRIA
+          ${isBooking ? "📅 New Booking Request" : "📩 New Enquiry"} | APRIA
         </h1>
       </div>
       <div style="background:#f8fafc;padding:32px;border-radius:0 0 8px 8px;border:1px solid #e5e7eb">

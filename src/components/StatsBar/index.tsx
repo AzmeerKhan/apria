@@ -18,11 +18,13 @@ function AnimatedCount({
   suffix = "",
   inView,
   duration = 1.5,
+  delay = 0,
 }: {
   to: number;
   suffix?: string;
   inView: boolean;
   duration?: number;
+  delay?: number;
 }) {
   const count = useMotionValue(0);
   const display = useTransform(count, (v) => {
@@ -34,11 +36,12 @@ function AnimatedCount({
     if (!inView) return;
     const controls = animate(count, to, {
       duration,
+      delay,
       ease: [0.2, 0, 0.8, 1],
       onComplete: () => count.set(to),
     });
     return controls.stop;
-  }, [inView, count, to, duration]);
+  }, [inView, count, to, duration, delay]);
 
   return <motion.span>{display}</motion.span>;
 }
@@ -68,15 +71,16 @@ export default function StatsBar() {
                 suffix="+"
                 inView={inView}
                 duration={0.5}
+                delay={0.8}
               />
             </div>
             <div className={styles.label}>Years Experience</div>
           </div>
           <div className={styles.stat}>
             <div className={styles.count}>
-              <AnimatedCount to={100} suffix="+" inView={inView} />
+              <AnimatedCount to={4} suffix="+" inView={inView} duration={0.5} delay={0.8} />
             </div>
-            <div className={styles.label}>Clients Served</div>
+            <div className={styles.label}>Industries Served</div>
           </div>
         </motion.div>
 

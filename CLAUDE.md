@@ -40,7 +40,7 @@ All copy lives in `src/i18n/messages/en.json`. Components import it directly (`i
 ### Constants
 
 - `src/constants/routes.ts` — `ROUTES` object and `NAV_LINKS` array (used by Navbar and Footer).
-- `src/constants/services.ts` — `SERVICE_IDS`, `SERVICE_CATEGORIES`, `SERVICE_SELECT_OPTIONS`, `HERO_SLIDES`.
+- `src/constants/services.ts` — `SERVICE_IDS`, `SECTOR_IDS`, `SERVICE_SECTORS`, `SERVICE_VALUE_MAP`, `SERVICE_SELECT_OPTIONS`, `SECTOR_SELECT_OPTIONS`, `HERO_SLIDES`.
 - `src/constants/credentials.ts` — `CREDENTIALS`, `CREDENTIAL_BADGES`.
 
 ### Shared components
@@ -59,6 +59,12 @@ Components in `src/components/` are reused across multiple pages:
 ### Animation pattern
 
 Framer Motion is used throughout. `FadeIn` and `StaggerGrid` are the standard scroll-trigger wrappers — pass the grid/layout class via `className` from the parent's SCSS module. Direct `motion.*` elements in components use `initial`/`animate` with `useInView` for imperative control.
+
+**Animations are mandatory for all new UI.** Every new section and every card grid must have entrance animations — never ship new UI without them. Rules:
+- Wrap individual elements (headings, text blocks, sidebar cards) in `FadeIn`. Use `direction="left"` for left-column content, `direction="right"` for right-column content, `direction="up"` (default) for centred content.
+- Wrap every card grid in `StaggerGrid` — it auto-wraps each child in a staggered `motion.div` (fade up, 0.1s between cards).
+- For two-column hero layouts: left content gets `FadeIn direction="left"`, right card gets `FadeIn direction="right" delay={0.15}`.
+- Stagger sidebar items with incremental `delay` props: first item `delay={0}`, second `delay={0.1}`, third `delay={0.2}`, etc.
 
 ## Key conventions
 

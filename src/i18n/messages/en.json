@@ -37,6 +37,38 @@
       "subheading": "Expert accounting and tax services for limited companies and self-employed individuals.",
       "seeAll": "See all services"
     },
+    "sectors": {
+      "heading": "Industries We Serve",
+      "subheading": "Specialist accounting tailored to your industry. We understand the unique financial challenges your business faces.",
+      "services": {
+        "heading": "Services",
+        "desc": "From restaurants and transport firms to consulting businesses. VAT, payroll, and cash flow management tailored to you."
+      },
+      "healthcare": {
+        "heading": "Healthcare",
+        "desc": "Specialist accounting for locums, care providers, and healthcare agencies. From payroll to CIS and tax compliance."
+      },
+      "trades": {
+        "heading": "Trades",
+        "desc": "CIS returns, bookkeeping, and tax planning for contractors, builders, and businesses in the construction industry."
+      },
+      "property": {
+        "heading": "Property",
+        "desc": "VAT, Corporation Tax, and bookkeeping for property managers, landlords, and development companies."
+      }
+    },
+    "goal": {
+      "badge": "Our Goal",
+      "heading": "Built for Small Business",
+      "subheading": "Why we started Apria",
+      "body": "Too many small business owners and sole traders are left navigating HMRC deadlines, tax returns, and compliance requirements on their own. We started Apria to change that. Our goal is simple: give every small business access to the same quality of accounting advice that larger companies take for granted, at a price that makes sense.",
+      "points": [
+        { "label": "Clear advice", "desc": "No jargon, no surprises. We explain everything in plain language so you always know where you stand." },
+        { "label": "Proactive support", "desc": "We flag issues before they become problems, keeping you ahead of deadlines and compliant at all times." },
+        { "label": "Personal service", "desc": "You deal directly with a qualified accountant who knows your business, not a call centre." },
+        { "label": "On-time filing", "desc": "We track every deadline and submission date so you never face late penalties or HMRC charges." }
+      ]
+    },
     "credentials": {
       "heading": "Qualified & Trusted",
       "subheading": "5 years of hands-on experience backed by professional qualifications and membership of the UK's leading accounting bodies.",
@@ -53,15 +85,23 @@
       "heading": "Ready to take control of your finances?",
       "body": "Whether you need help with tax returns, financial reporting, or strategic business advice - get in touch today for a free, no-obligation consultation.",
       "button": "Get in Touch"
+    },
+    "location": {
+      "badge": "Find Us",
+      "heading": "Our Office",
+      "body": "Based in England, United Kingdom. Get in touch to arrange a free consultation at a time that suits you."
     }
   },
   "services": {
     "badge": "What we do",
     "heading": "Our Services",
     "subheading": "Expert accounting and tax services for limited companies and self-employed individuals across England.",
-    "categories": {
-      "limitedCompany": "Limited Company",
-      "selfEmployed": "Self-Employed"
+    "sectors": {
+      "all": "All Services",
+      "services": "Services",
+      "healthcare": "Healthcare",
+      "trades": "Trades",
+      "property": "Property"
     },
     "cta": {
       "heading": "Not sure which service you need?",
@@ -183,7 +223,7 @@
     "subheading": "Have a question or ready to get started? Fill in the form below and I'll get back to you within 1–2 business days.",
     "tabs": {
       "enquiry": "General Enquiry",
-      "booking": "Book Appointment"
+      "booking": "Book Free Appointment"
     },
     "form": {
       "heading": "Send a Message",
@@ -200,6 +240,9 @@
       "emailPlaceholder": "jane@example.com",
       "phone": "Phone Number",
       "phonePlaceholder": "+44 7700 000000",
+      "monthlyTurnover": "Monthly Turnover",
+      "sector": "Industry / Sector",
+      "sectorCustomPlaceholder": "Please describe your industry or sector…",
       "service": "Service You're Interested In",
       "servicePlaceholder": "Select a service…",
       "serviceOther": "Other / Not Sure",
@@ -215,12 +258,8 @@
     "info": {
       "heading": "Contact Information",
       "email": "Email",
-      "emailValue": "hello@apria.co.uk",
       "phone": "Phone",
-      "phoneValue": "+44 7700 000000",
-      "phoneHref": "tel:+447700000000",
       "location": "Location",
-      "locationValue": "England, United Kingdom",
       "freeConsultation": {
         "heading": "Free Initial Consultation",
         "body": "All new enquiries include a free, no-obligation initial consultation to discuss your needs and how we can help."

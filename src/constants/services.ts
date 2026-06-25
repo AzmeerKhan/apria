@@ -9,10 +9,17 @@ export const SERVICE_IDS = [
 
 export type ServiceId = (typeof SERVICE_IDS)[number];
 
-export const SERVICE_CATEGORIES = [
-  { id: "limitedCompany" as const, serviceIds: ["annualAccounts", "vatReturns", "cisReturn"] as const },
-  { id: "selfEmployed"   as const, serviceIds: ["selfAssessment", "utrRegistration", "hmrcInvestigations"] as const },
-];
+export const SECTOR_IDS = ["services", "healthcare", "trades", "property"] as const;
+export type SectorId = (typeof SECTOR_IDS)[number];
+
+export const SERVICE_SECTORS: Record<ServiceId, readonly SectorId[]> = {
+  annualAccounts:     ["services", "healthcare", "trades", "property"],
+  vatReturns:         ["services", "healthcare", "trades", "property"],
+  cisReturn:          ["trades", "property"],
+  selfAssessment:     ["services", "healthcare", "trades", "property"],
+  utrRegistration:    ["services", "healthcare", "trades", "property"],
+  hmrcInvestigations: ["services", "healthcare", "trades", "property"],
+};
 
 export const HERO_SLIDES = [
   { id: "slide1", titleKey: "home.hero.slide1.title", subtitleKey: "home.hero.slide1.subtitle" },
@@ -28,6 +35,15 @@ export const SERVICE_VALUE_MAP: Record<ServiceId, string> = {
   utrRegistration:    "utr-registration",
   hmrcInvestigations: "hmrc-investigations",
 };
+
+export const SECTOR_SELECT_OPTIONS = [
+  { value: "",           label: "Select your industry…" },
+  { value: "services",   label: "Services"              },
+  { value: "healthcare", label: "Healthcare"            },
+  { value: "trades",     label: "Trades"                },
+  { value: "property",   label: "Property"              },
+  { value: "other",      label: "Other / Not Listed"    },
+] as const;
 
 export const SERVICE_SELECT_OPTIONS = [
   { value: "",                     label: "Select a service…"                      },

@@ -1,6 +1,16 @@
 import type { Metadata } from "next";
 import ContactTabs from "@/components/ContactTabs";
 import FadeIn from "@/components/FadeIn";
+import ContactHeroCard from "./ContactHeroCard";
+import ContactHeroLeft from "./ContactHeroLeft";
+import {
+  CONTACT_EMAIL,
+  CONTACT_PHONE,
+  CONTACT_PHONE_HREF,
+  CONTACT_LOCATION,
+  CONTACT_MAP_URL,
+  CONTACT_MAP_LINK,
+} from "@/constants/contact";
 import en from "@/i18n/messages/en.json";
 import styles from "./page.module.scss";
 
@@ -12,33 +22,70 @@ export const metadata: Metadata = {
 const contactDetails = [
   {
     icon: (
-      <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+      <svg
+        width="20"
+        height="20"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={1.5}
+        viewBox="0 0 24 24"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
+        />
       </svg>
     ),
     label: en.contact.info.email,
-    value: en.contact.info.emailValue,
-    href: `mailto:${en.contact.info.emailValue}`,
+    value: CONTACT_EMAIL,
+    href: `mailto:${CONTACT_EMAIL}`,
   },
   {
     icon: (
-      <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+      <svg
+        width="20"
+        height="20"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={1.5}
+        viewBox="0 0 24 24"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"
+        />
       </svg>
     ),
     label: en.contact.info.phone,
-    value: en.contact.info.phoneValue,
-    href: en.contact.info.phoneHref,
+    value: CONTACT_PHONE,
+    href: CONTACT_PHONE_HREF,
   },
   {
     icon: (
-      <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-        <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+      <svg
+        width="20"
+        height="20"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={1.5}
+        viewBox="0 0 24 24"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"
+        />
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"
+        />
       </svg>
     ),
     label: en.contact.info.location,
-    value: en.contact.info.locationValue,
+    value: CONTACT_LOCATION,
     href: null,
   },
 ];
@@ -46,32 +93,41 @@ const contactDetails = [
 export default async function ContactPage({
   searchParams,
 }: {
-  searchParams: Promise<{ service?: string; tab?: string }>;
+  searchParams: Promise<{
+    service?: string;
+    sector?: string;
+    tab?: string;
+  }>;
 }) {
-  const { service, tab } = await searchParams;
+  const { service, sector, tab } = await searchParams;
   return (
     <>
       <section className={styles.hero}>
-        <div className={styles.container}>
-          <FadeIn>
-            <p className={styles.badge}>{en.contact.badge}</p>
-            <h1 className={styles.heroTitle}>{en.contact.heading}</h1>
-            <p className={styles.heroSub}>{en.contact.subheading}</p>
-          </FadeIn>
+        <div className={styles.heroInner}>
+          <ContactHeroLeft />
+          <ContactHeroCard />
         </div>
       </section>
 
       <section className={styles.main}>
         <div className={styles.layout}>
           <FadeIn direction="left" className={styles.formCard}>
-            <h2 className={styles.formTitle}>{en.contact.form.heading}</h2>
-            <ContactTabs defaultService={service} defaultTab={tab === "booking" ? "booking" : undefined} />
+            <h2 className={styles.formTitle}>
+              {en.contact.form.heading}
+            </h2>
+            <ContactTabs
+              defaultService={service}
+              defaultSector={sector}
+              defaultTab={tab === "booking" ? "booking" : undefined}
+            />
           </FadeIn>
 
           <div className={styles.sidebar}>
             <FadeIn direction="right">
               <div className={styles.contactCard}>
-                <h2 className={styles.contactTitle}>{en.contact.info.heading}</h2>
+                <h2 className={styles.contactTitle}>
+                  {en.contact.info.heading}
+                </h2>
                 <ul className={styles.contactList}>
                   {contactDetails.map(({ icon, label, value, href }) => (
                     <li key={label} className={styles.contactItem}>
@@ -79,7 +135,9 @@ export default async function ContactPage({
                       <div>
                         <p className={styles.contactLabel}>{label}</p>
                         {href ? (
-                          <a href={href} className={styles.contactLink}>{value}</a>
+                          <a href={href} className={styles.contactLink}>
+                            {value}
+                          </a>
                         ) : (
                           <p className={styles.contactValue}>{value}</p>
                         )}
@@ -90,21 +148,37 @@ export default async function ContactPage({
               </div>
             </FadeIn>
 
-            <FadeIn direction="right" delay={0.1}>
-              <div className={styles.consultCard}>
-                <h3 className={styles.consultTitle}>{en.contact.info.freeConsultation.heading}</h3>
-                <p className={styles.consultBody}>{en.contact.info.freeConsultation.body}</p>
-              </div>
-            </FadeIn>
-
-            <FadeIn direction="right" delay={0.2}>
-              <div className={styles.qualsCard}>
-                <h3 className={styles.qualsTitle}>{en.contact.info.qualifications}</h3>
-                <div className={styles.qualsBadges}>
-                  {["ACCA", "AAT Member"].map((q) => (
-                    <span key={q} className={styles.qualBadge}>{q}</span>
-                  ))}
-                </div>
+            <FadeIn direction="right">
+              <div className={styles.sidebarMapWrap}>
+                <iframe
+                  src={CONTACT_MAP_URL}
+                  title="Office location"
+                  loading="lazy"
+                  className={styles.sidebarMap}
+                />
+                <a
+                  href={CONTACT_MAP_LINK}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.directionsBtn}
+                >
+                  <svg
+                    width="16"
+                    height="16"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth={2}
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z"
+                    />
+                  </svg>
+                  Get Directions
+                </a>
               </div>
             </FadeIn>
           </div>

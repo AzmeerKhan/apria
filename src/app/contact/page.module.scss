@@ -26,6 +26,77 @@
   @include container;
 }
 
+.heroInner {
+  @include container;
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+  position: relative;
+  z-index: 1;
+
+  @include lg {
+    flex-direction: row;
+    align-items: center;
+    gap: 6.4rem;
+  }
+}
+
+.heroLeft {
+  flex: 1;
+}
+
+.heroCard {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: $radius-2xl;
+  padding: 2.4rem 2.8rem;
+  flex-shrink: 0;
+
+  @include lg {
+    width: 30rem;
+  }
+}
+
+.heroCardLabel {
+  font-size: $fs-sm;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: $color-teal;
+  margin-bottom: 1.2rem;
+}
+
+.heroCardBody {
+  font-size: $fs-sm;
+  color: $color-on-dark;
+  line-height: 1.65;
+  margin-bottom: 2rem;
+}
+
+.heroCardDivider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  margin-bottom: 2rem;
+}
+
+
+.credRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.credBadge {
+  padding: 0.4rem 1.2rem;
+  border-radius: $radius-full;
+  font-size: $fs-xs;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.15);
+  color: $color-white;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(4px);
+}
+
 .badge {
   color: $color-teal;
   font-size: $fs-sm;
@@ -208,3 +279,42 @@
   font-weight: 500;
   border: 1px solid $color-gray-200;
 }
+
+.sidebarMapWrap {
+  position: relative;
+  border-radius: $radius-2xl;
+  overflow: hidden;
+  height: 32rem;
+}
+
+.sidebarMap {
+  width: 100%;
+  height: calc(32rem + 4rem);
+  border: none;
+  display: block;
+  filter: grayscale(10%);
+}
+
+.directionsBtn {
+  position: absolute;
+  bottom: 1.2rem;
+  right: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.8rem 1.4rem;
+  background: $color-navy;
+  color: $color-white;
+  font-size: $fs-sm;
+  font-weight: 600;
+  border-radius: $radius-lg;
+  text-decoration: none;
+  box-shadow: $shadow-md;
+  transition: background $t-base;
+  z-index: 1;
+
+  &:hover {
+    background: $color-teal;
+  }
+}
+
