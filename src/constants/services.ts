@@ -3,7 +3,8 @@ export const SERVICE_IDS = [
   "vatReturns",
   "cisReturn",
   "selfAssessment",
-  "utrRegistration",
+  "companyFormation",
+  "capitalGainsTax",
   "hmrcInvestigations",
 ] as const;
 
@@ -17,7 +18,8 @@ export const SERVICE_SECTORS: Record<ServiceId, readonly SectorId[]> = {
   vatReturns:         ["services", "healthcare", "trades", "property"],
   cisReturn:          ["trades", "property"],
   selfAssessment:     ["services", "healthcare", "trades", "property"],
-  utrRegistration:    ["services", "healthcare", "trades", "property"],
+  companyFormation:   ["services", "healthcare", "trades", "property"],
+  capitalGainsTax:    ["services", "healthcare", "trades", "property"],
   hmrcInvestigations: ["services", "healthcare", "trades", "property"],
 };
 
@@ -32,7 +34,8 @@ export const SERVICE_VALUE_MAP: Record<ServiceId, string> = {
   vatReturns:         "vat-returns",
   cisReturn:          "cis-return",
   selfAssessment:     "self-assessment",
-  utrRegistration:    "utr-registration",
+  companyFormation:   "company-formation",
+  capitalGainsTax:    "capital-gains-tax",
   hmrcInvestigations: "hmrc-investigations",
 };
 
@@ -51,7 +54,8 @@ export const SERVICE_SELECT_OPTIONS = [
   { value: "vat-returns",          label: "VAT Returns"                            },
   { value: "cis-return",           label: "CIS Return"                             },
   { value: "self-assessment",      label: "Self Assessment / Tax Return"           },
-  { value: "utr-registration",     label: "UTR Registration"                       },
+  { value: "company-formation",    label: "Company Formation"                      },
+  { value: "capital-gains-tax",    label: "Capital Gains Tax"                      },
   { value: "hmrc-investigations",  label: "HMRC Investigations"                    },
   { value: "other",                label: "Other / Not Sure"                       },
 ] as const;

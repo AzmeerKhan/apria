@@ -11,7 +11,8 @@ const SERVICE_LABELS: Record<string, string> = {
   vatReturns: en.services.vatReturns.title,
   cisReturn: en.services.cisReturn.title,
   selfAssessment: en.services.selfAssessment.title,
-  utrRegistration: en.services.utrRegistration.title,
+  companyFormation: en.services.companyFormation.title,
+  capitalGainsTax: en.services.capitalGainsTax.title,
   hmrcInvestigations: en.services.hmrcInvestigations.title,
 };
 

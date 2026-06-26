@@ -19,7 +19,8 @@ const services = [
   en.services.vatReturns.title,
   en.services.cisReturn.title,
   en.services.selfAssessment.title,
-  en.services.utrRegistration.title,
+  en.services.companyFormation.title,
+  en.services.capitalGainsTax.title,
   en.services.hmrcInvestigations.title,
 ];
 

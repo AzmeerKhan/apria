@@ -164,15 +164,26 @@
         "Payments on account guidance"
       ]
     },
-    "utrRegistration": {
-      "title": "UTR Registration",
-      "summary": "We help you obtain your Unique Taxpayer Reference number required for self-employed activity and provide support throughout the HMRC registration process.",
+    "companyFormation": {
+      "title": "Company Formation",
+      "summary": "We handle the full setup of your limited company with Companies House, including all necessary registrations with HMRC, so you can start trading with confidence.",
       "points": [
-        "HMRC self-employment registration",
-        "Unique Taxpayer Reference (UTR) application",
-        "Class 2 and Class 4 National Insurance setup",
-        "Guidance on your obligations and key deadlines",
-        "Full setup support from day one"
+        "Companies House incorporation and registration",
+        "Memorandum and articles of association",
+        "Director, shareholder, and PSC setup",
+        "HMRC corporation tax registration",
+        "VAT and PAYE registration advice"
+      ]
+    },
+    "capitalGainsTax": {
+      "title": "Capital Gains Tax",
+      "summary": "We calculate and report your Capital Gains Tax liability from the disposal of property, shares, or business assets, ensuring you pay the right amount and claim every available relief.",
+      "points": [
+        "CGT calculation on property and land disposals",
+        "Shares and investment asset reporting",
+        "Business Asset Disposal Relief (formerly Entrepreneurs' Relief)",
+        "HMRC CGT return filing and payment management",
+        "Annual exemption and loss offset planning"
       ]
     },
     "hmrcInvestigations": {
