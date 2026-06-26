@@ -1,7 +1,7 @@
 import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
 import { ROUTES } from "@/constants/routes";
-import { CONTACT_EMAIL, CONTACT_PHONE, CONTACT_PHONE_HREF } from "@/constants/contact";
+import { CONTACT_EMAIL, CONTACT_PHONE, CONTACT_PHONE_HREF, CONTACT_HOURS } from "@/constants/contact";
 import en from "@/i18n/messages/en.json";
 import styles from "./style.module.scss";
 
@@ -32,6 +32,12 @@ export default function CtaSection() {
               </svg>
               {CONTACT_PHONE}
             </a>
+            <span className={styles.ctaContact}>
+              <svg width="15" height="15" fill="none" stroke="currentColor" strokeWidth={1.75} viewBox="0 0 24 24" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              {CONTACT_HOURS}
+            </span>
           </div>
         </FadeIn>
       </div>
