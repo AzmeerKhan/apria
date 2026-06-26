@@ -188,15 +188,26 @@
     }
   },
   "about": {
-    "badge": "About APRIA",
-    "heading": "Meet Your Accountant",
-    "subheading": "A qualified, experienced professional dedicated to helping small businesses navigate their finances with confidence.",
+    "badge": "About Apria",
+    "heading": "Accounting Built for Small Business",
+    "subheading": "Apria is a professional accounting practice helping limited companies and self-employed individuals across England stay compliant, organised, and in control of their finances.",
+    "heroCta": "Get in Touch",
+    "heroCard": {
+      "label": "Why Choose Apria",
+      "items": [
+        "ACCA Qualified",
+        "Full AAT Member",
+        "5+ Years Experience",
+        "All Sectors Welcome",
+        "Free Initial Consultation"
+      ]
+    },
     "experience": {
-      "heading": "5 Years of Expertise",
-      "p1": "With five years of hands-on experience across a diverse range of industries, I have built a strong foundation in financial reporting, tax planning, and business advisory services.",
-      "p2": "I hold the ACCA qualification and am a proud member of the Association of Accounting Technicians (AAT).",
-      "p3": "I am passionate about helping small businesses thrive. Whether you are just starting out or looking to scale, I bring the expertise and personal commitment to guide you through every financial challenge.",
-      "p4": "My approach is simple: understand your goals, provide clear advice, and deliver work you can rely on."
+      "heading": "Five Years of Hands-On Experience",
+      "p1": "Apria brings five years of experience across a diverse range of industries - from trades and construction to healthcare and property - with a strong foundation in financial reporting, tax planning, and business advisory services.",
+      "p2": "The practice holds the ACCA qualification and maintains full membership of the Association of Accounting Technicians (AAT), ensuring every client receives advice that meets the highest professional standards.",
+      "p3": "We work with businesses at every stage - from new starts navigating their first tax return to established companies seeking better financial clarity and control.",
+      "p4": "Our approach is straightforward: understand your goals, give clear advice, and deliver work you can rely on."
     },
     "credentials": {
       "heading": "Qualifications & Memberships",
@@ -210,7 +221,7 @@
       }
     },
     "values": {
-      "heading": "How I Work",
+      "heading": "How We Work",
       "accuracy": {
         "title": "Accuracy",
         "desc": "Every figure, report, and submission reviewed with meticulous attention to detail."
@@ -221,12 +232,17 @@
       },
       "dedication": {
         "title": "Dedication",
-        "desc": "A genuine commitment to your goals, available when you need support."
+        "desc": "Committed to your goals and available when you need support."
       },
       "upToDate": {
         "title": "Up-to-Date",
         "desc": "Continuously keeping pace with changes in UK tax law and accounting standards."
       }
+    },
+    "founder": {
+      "badge": "Our Founder",
+      "heading": "Nazia Rafiq",
+      "body": "Nazia established Apria with a clear purpose: to give small businesses access to professional, plain-English financial guidance - without the complexity or fees typically associated with larger accountancy firms. With five years of hands-on experience across multiple industries, she leads every client engagement directly."
     }
   },
   "contact": {

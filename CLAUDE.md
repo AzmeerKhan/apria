@@ -73,7 +73,8 @@ Framer Motion is used throughout. `FadeIn` and `StaggerGrid` are the standard sc
 - Add new route constants to `ROUTES` and `NAV_LINKS` in `src/constants/routes.ts`.
 - Static-export compatible — no server-only APIs.
 - Use `@/` alias for all internal imports.
-- **No section-label comments** — `{/* Services */}`, `{/* Desktop layout */}`, `{/* Left */}` and similar comments that restate what the class name or element already communicates are forbidden. Only add a comment when the *why* is non-obvious (a workaround, a subtle invariant, a browser quirk).
+- **No section-label comments** - `{/* Services */}`, `{/* Desktop layout */}`, `{/* Left */}` and similar comments that restate what the class name or element already communicates are forbidden. Only add a comment when the *why* is non-obvious (a workaround, a subtle invariant, a browser quirk).
+- **No em dashes** - never use `—` anywhere in the project (copy, comments, code). Use a regular hyphen `-` instead.
 
 ## Project overview
 
