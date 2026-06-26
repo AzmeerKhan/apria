@@ -1,5 +1,5 @@
 export const CONTACT_EMAIL = "info@apriaaccountants.co.uk";
-export const CONTACT_HOURS = "Mon – Fri, 9:00am – 5:00pm";
+export const CONTACT_HOURS = "Mon - Fri, 9:00am - 5:00pm";
 export const CONTACT_PHONE = "+44 7599 598568";
 export const CONTACT_PHONE_HREF = "tel:+447599598568";
 export const CONTACT_WHATSAPP_HREF = "https://wa.me/447599598568";
