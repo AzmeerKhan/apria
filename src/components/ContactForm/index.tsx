@@ -105,11 +105,11 @@ export default function ContactForm({ enquiryType = "enquiry", defaultService = 
             </label>
             <select id="monthlyTurnover" name="monthlyTurnover" className={styles.select}>
               <option value="">Prefer not to say</option>
-              <option value="under-5k">Under £5,000</option>
-              <option value="5k-15k">£5,000 – £15,000</option>
-              <option value="15k-30k">£15,000 – £30,000</option>
-              <option value="30k-50k">£30,000 – £50,000</option>
-              <option value="over-50k">Over £50,000</option>
+              <option value="Under £5,000">Under £5,000</option>
+              <option value="£5,000 – £15,000">£5,000 – £15,000</option>
+              <option value="£15,000 – £30,000">£15,000 – £30,000</option>
+              <option value="£30,000 – £50,000">£30,000 – £50,000</option>
+              <option value="Over £50,000">Over £50,000</option>
             </select>
           </div>
         </>
