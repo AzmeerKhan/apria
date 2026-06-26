@@ -241,7 +241,7 @@
       "heading": "Send a Message",
       "bookingHeading": "Book an Appointment",
       "preferredDate": "Preferred Date & Time",
-      "preferredDatePlaceholder": "e.g. Tuesday afternoons, any weekday morning",
+      "preferredDatePlaceholder": "e.g. any Tuesday afternoon",
       "bookingMessagePlaceholder": "Tell me what you'd like to discuss and any details that will help me prepare…",
       "bookingSubmit": "Request Appointment",
       "bookingSuccessHeading": "Booking Request Received",

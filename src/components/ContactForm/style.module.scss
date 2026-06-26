@@ -78,6 +78,17 @@
   min-height: 130px;
 }
 
+.inputError {
+  border-color: $color-error !important;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1) !important;
+}
+
+.fieldError {
+  font-size: $fs-xs;
+  color: $color-error;
+  margin-top: -0.2rem;
+}
+
 .errorMsg {
   font-size: $fs-sm;
   color: $color-error;
